@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>WOLF INDUSTRIES | Business Brain Dashboard</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          surface: { DEFAULT: '#0b1326', container: '#171f33', low: '#131b2e', darkest: '#060e20', high: '#222a3d', bright: '#31394d' },
+          primary: '#c0c1ff', secondary: '#ddb7ff', tertiary: '#4edea3', tertiaryAlt: '#6ffbbe',
+          outline: '#908fa0', body: '#dae2fd', muted: '#c7c4d7', error: '#ff3355',
+          wolf: '#b8ff00'
+        },
+        fontFamily: { sans: ['Inter'], mono: ['JetBrains Mono'] }
+      }
+    }
+  }
+</script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: #0b1326; color: #dae2df; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+  /* Animated mesh background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at 20% 0%, rgba(184,255,0,0.04) 0%, transparent 40%),
+      radial-gradient(ellipse at 80% 20%, rgba(0,212,255,0.03) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 100%, rgba(168,85,247,0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+    animation: meshShift 20s ease-in-out infinite;
+  }
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  @keyframes meshShift {
+    0%, 100% { transform: translate(0,0); }
+    33% { transform: translate(2%, -1%); }
+    66% { transform: translate(-1%, 2%); }
+  }
+
+  /* Glass card */
+  .glass { background: rgba(23, 31, 51, 0.5); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.08); transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+  .glass:hover { border-color: rgba(184,255,0,0.25); box-shadow: 0 20px 50px rgba(0,0,0,0.4); transform: translateY(-2px); }
+  .glass-glow { box-shadow: 0 0 30px rgba(184,255,0,0.08); }
+
+  /* Neon accents */
+  .neon-line { background: linear-gradient(90deg, transparent, #b8ff00, transparent); height: 1px; opacity: 0.4; }
+  .neon-text { background: linear-gradient(135deg, #b8ff00, #00d4ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .neon-glow { box-shadow: 0 0 15px rgba(184,255,0,0.2); }
+
+  /* Pulse animation */
+  @keyframes pulse-glow { 0%,100% { opacity:0.5; transform:scale(1); } 50% { opacity:1; transform:scale(1.15); } }
+  .ping { animation: pulse-glow 3s infinite ease-in-out; }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(184,255,0,0.2); border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(184,255,0,0.4); }
+
+  /* Seed animation */
+  @keyframes countUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+  .reveal { opacity:0; transform:translateY(30px); transition:all 0.8s cubic-bezier(0.4,0,0.2,1); }
+  .reveal.visible { opacity:1; transform:translateY(0); }
+
+  /* Nav active state */
+  .nav-active { background: rgba(184,255,0,0.1); color: #b8ff00; border-left: 3px solid #b8ff00; }
+
+  /* Section dividers */
+  .section-divider { height: 1px; background: linear-gradient(90deg, transparent, rgba(184,255,0,0.2), transparent); margin: 0 2rem; }
+
+  /* Mobile nav */
+  @media (max-width: 768px) {
+    .sidebar { display: none; }
+    .sidebar.open { display: flex !important; }
+    .ml-sidebar { margin-left: 0 !important; }
+  }
+
+  /* Animated gradient border */
+  .gradient-border { position: relative; }
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(184,255,0,0.3), rgba(0,212,255,0.1), rgba(168,85,247,0.2));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body class="bg-surface text-body">
+
+<!-- Sidebar -->
+<aside class="sidebar fixed left-0 top-0 h-screen w-64 flex flex-col p-6 bg-surface-container/60 backdrop-blur-2xl border-r border-white/5 shadow-[20px_0_50px_rgba(0,0,0,0.4)] z-[60]">
+  <div class="mb-10">
+    <h1 class="text-2xl font-black tracking-tighter neon-text">WOLF<span class="text-primary">.</span></h1>
+    <p class="text-[10px] tracking-[0.15em] text-outline mt-1 font-medium uppercase">Business Brain / v2.0</p>
+  </div>
+  <nav class="flex flex-col gap-1 flex-grow">
+    <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium nav-active" href="#overview">
+      <span class="material-symbols-outlined text-lg">dashboard</span> Overview
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium" href="#strategy">
+      <span class="material-symbols-outlined text-lg">account_tree</span> Strategy &amp; Flow
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium" href="#command">
+      <span class="material-symbols-outlined text-lg">insights</span> Command Center
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium" href="#analytics">
+      <span class="material-symbols-outlined text-lg">analytics</span> Advanced Analytics
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium" href="#operations">
+      <span class="material-symbols-outlined text-lg">settings_input_component</span> Operations
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium" href="#pricing">
+      <span class="material-symbols-outlined text-lg">payments</span> Pricing
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium" href="#roadmap">
+      <span class="material-symbols-outlined text-lg">map</span> Growth Roadmap
+    </a>
+  </nav>
+  <div class="mt-auto pt-6 border-t border-white/5">
+    <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-wolf hover:bg-wolf/10 rounded-xl transition-all mb-2" href="#contact">
+      <span class="material-symbols-outlined text-lg">mail</span> Contact H. Sadew
+    </a>
+    <div class="flex items-center gap-2 px-4 mt-2">
+      <div class="w-2 h-2 rounded-full bg-wolf ping"></div>
+      <span class="text-[10px] text-muted font-medium tracking-wider uppercase">Online / Colombo, LK</span>
+    </div>
+  </div>
+</aside>
+
+<!-- Main -->
+<main class="ml-sidebar ml-64 min-h-screen">
+
+  <!-- Top Header -->
+  <header class="sticky top-0 z-50 px-8 py-4 bg-surface/80 backdrop-blur-xl border-b border-white/5 shadow-2xl">
+    <div class="flex justify-between items-center">
+      <div>
+        <h2 class="text-xl font-bold tracking-tight neon-text">WOLF INDUSTRIES</h2>
+        <p class="text-[10px] text-muted font-medium tracking-widest uppercase">Freelance Web Development Business Brain</p>
+      </div>
+      <div class="flex items-center gap-4">
+        <div class="hidden md:flex items-center bg-white/5 rounded-full px-4 py-2 border border-white/5 focus-within:border-wolf/30 transition-all">
+          <span class="material-symbols-outlined text-sm text-outline mr-2">search</span>
+          <input class="bg-transparent border-none outline-none text-sm w-48 placeholder:text-outline/50 text-body" placeholder="Search modules..." type="text"/>
+        </div>
+        <button class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-white/5 text-muted transition-colors relative">
+          <span class="material-symbols-outlined">notifications</span>
+          <div class="absolute top-1 right-1 w-2 h-2 bg-wolf rounded-full"></div>
+        </button>
+        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-wolf to-primary flex items-center justify-center text-surface text-xs font-black">HS</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================ -->
+  <!-- SECTION 1: OVERVIEW -->
+  <!-- ============================================ -->
+  <section class="px-8 py-12" id="overview">
+    <div class="mb-8 reveal">
+      <span class="text-[10px] font-bold tracking-[0.2em] text-wolf uppercase">Business Overview</span>
+      <h2 class="text-4xl font-black tracking-tight mt-2 text-body">Your Business.<br/><span class="neon-text">At a Glance.</span></h2>
+      <p class="text-muted text-sm mt-2 max-w-lg">Wolf Industries — premium freelance web development from Colombo, Sri Lanka. This dashboard tracks everything from revenue to client pipeline to growth plans.</p>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+      <div class="glass rounded-2xl p-6 reveal">
+        <div class="flex justify-between items-start mb-4">
+          <div class="w-10 h-10 rounded-xl bg-wolf/10 flex items-center justify-center"><span class="material-symbols-outlined text-wolf">payments</span></div>
+          <span class="text-[10px] px-2 py-1 rounded-full bg-wolf/10 text-wolf font-bold">LAUNCH</span>
+        </div>
+        <p class="text-[10px] font-bold tracking-widest text-muted uppercase">Revenue (All Time)</p>
+        <p class="text-3xl font-black text-body mt-1">$0</p>
+        <p class="text-xs text-muted mt-2">First client pending. Building from zero.</p>
+      </div>
+      <div class="glass rounded-2xl p-6 reveal">
+        <div class="flex justify-between items-start mb-4">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center"><span class="material-symbols-outlined text-primary">groups</span></div>
+          <span class="text-[10px] px-2 py-1 rounded-full bg-primary/10 text-primary font-bold">PIPELINE</span>
+        </div>
+        <p class="text-[10px] font-bold tracking-widest text-muted uppercase">Active Clients</p>
+        <p class="text-3xl font-black text-body mt-1">0</p>
+        <p class="text-xs text-muted mt-2">Target: 5 by end of Month 3.</p>
+      </div>
+      <div class="glass rounded-2xl p-6 reveal">
+        <div class="flex justify-between items-start mb-4">
+          <div class="w-10 h-10 rounded-xl bg-tertiary/10 flex items-center justify-center"><span class="material-symbols-outlined text-tertiary">deployed_code</span></div>
+          <span class="text-[10px] px-2 py-1 rounded-full bg-tertiary/10 text-tertiary font-bold">MODULES</span>
+        </div>
+        <p class="text-[10px] font-bold tracking-widest text-muted uppercase">AI Modules Live</p>
+        <p class="text-3xl font-black text-body mt-1">5/5</p>
+        <p class="text-xs text-muted mt-2">Full business brain operational.</p>
+      </div>
+      <div class="glass rounded-2xl p-6 reveal">
+        <div class="flex justify-between items-start mb-4">
+          <div class="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center"><span class="material-symbols-outlined text-secondary">rocket_launch</span></div>
+          <span class="text-[10px] px-2 py-1 rounded-full bg-secondary/10 text-secondary font-bold">GOAL</span>
+        </div>
+        <p class="text-[10px] font-bold tracking-widest text-muted uppercase">2026 Target</p>
+        <p class="text-3xl font-black text-body mt-1">$73K</p>
+        <p class="text-xs text-muted mt-2">$100K/mo by end of 2027.</p>
+      </div>
+    </div>
+
+    <!-- Services Banner -->
+    <div class="glass gradient-border rounded-2xl p-8 reveal">
+      <h3 class="text-lg font-bold text-body mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-wolf">auto_awesome</span> What We Build</h3>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <div class="text-center p-4 rounded-xl bg-white/5"><span class="material-symbols-outlined text-wolf text-2xl mb-2 block">language</span><p class="text-xs font-bold">Websites</p></div>
+        <div class="text-center p-4 rounded-xl bg-white/5"><span class="material-symbols-outlined text-primary text-2xl mb-2 block">draw</span><p class="text-xs font-bold">UI Design</p></div>
+        <div class="text-center p-4 rounded-xl bg-white/5"><span class="material-symbols-outlined text-tertiary text-2xl mb-2 block">smart_toy</span><p class="text-xs font-bold">AI Integration</p></div>
+        <div class="text-center p-4 rounded-xl bg-white/5"><span class="material-symbols-outlined text-secondary text-2xl mb-2 block">animation</span><p class="text-xs font-bold">Motion Design</p></div>
+        <div class="text-center p-4 rounded-xl bg-white/5"><span class="material-symbols-outlined text-[#ff8800] text-2xl mb-2 block">speed</span><p class="text-xs font-bold">Performance</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 2: STRATEGY & FLOW -->
+  <!-- ============================================ -->
+  <section class="px-8 py-12" id="strategy">
+    <div class="mb-8 reveal">
+      <span class="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">Module 01</span>
+      <h2 class="text-3xl font-black tracking-tight mt-2">Strategy <span class="text-primary">&amp; Flow</span></h2>
+      <p class="text-muted text-sm mt-1">Growth levers, funding roadmap, and departmental plans.</p>
+    </div>
+
+    <div class="grid grid-cols-12 gap-5 mb-8">
+      <!-- Growth Levers Mind Map -->
+      <div class="col-span-12 lg:col-span-8 glass rounded-3xl p-8 h-[480px] relative overflow-hidden reveal">
+        <div class="absolute top-6 left-6 z-10">
+          <h3 class="text-xl font-bold text-primary">Growth Levers</h3>
+          <p class="text-muted text-sm">Dynamic Strategy Network</p>
+        </div>
+        <!-- Central Node -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="relative z-10 w-28 h-28 rounded-full bg-gradient-to-br from-primary/30 to-primary/10 border-2 border-primary flex items-center justify-center text-primary font-bold text-center text-sm backdrop-blur-md ping">
+            WOLF<br/>CORE
+          </div>
+          <!-- SVG Lines -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-30" preserveaspectratio="none">
+            <path d="M50%,50% Q60%,30% 70%,25%" fill="none" stroke="#c0c1ff" stroke-width="2"></path>
+            <path d="M50%,50% Q40%,25% 30%,30%" fill="none" stroke="#c0c1ff" stroke-width="2"></path>
+            <path d="M50%,50% Q40%,70% 30%,75%" fill="none" stroke="#c0c1ff" stroke-width="2"></path>
+            <path d="M50%,50% Q65%,75% 75%,70%" fill="none" stroke="#c0c1ff" stroke-width="2"></path>
+          </svg>
+        </div>
+        <!-- Satellite Nodes -->
+        <div class="absolute top-[15%] right-[15%] flex flex-col items-center z-20">
+          <div class="w-14 h-14 glass rounded-2xl flex items-center justify-center text-tertiary border-tertiary/30 mb-1"><span class="material-symbols-outlined">campaign</span></div>
+          <span class="text-[10px] font-bold tracking-widest text-tertiary">MARKETING</span>
+        </div>
+        <div class="absolute top-[20%] left-[12%] flex flex-col items-center z-20">
+          <div class="w-14 h-14 glass rounded-2xl flex items-center justify-center text-secondary border-secondary/30 mb-1"><span class="material-symbols-outlined">inventory_2</span></div>
+          <span class="text-[10px] font-bold tracking-widest text-secondary">PRODUCT</span>
+        </div>
+        <div class="absolute bottom-[18%] left-[15%] flex flex-col items-center z-20">
+          <div class="w-14 h-14 glass rounded-2xl flex items-center justify-center text-wolf border-wolf/30 mb-1"><span class="material-symbols-outlined">public</span></div>
+          <span class="text-[10px] font-bold tracking-widest text-wolf">GLOBAL</span>
+        </div>
+        <div class="absolute bottom-[12%] right-[18%] flex flex-col items-center z-20">
+          <div class="w-14 h-14 glass rounded-2xl flex items-center justify-center text-error border-error/30 mb-1"><span class="material-symbols-outlined">memory</span></div>
+          <span class="text-[10px] font-bold tracking-widest text-error">TECH STACK</span>
+        </div>
+      </div>
+
+      <!-- Funding Flow -->
+      <div class="col-span-12 lg:col-span-4 glass rounded-3xl p-8 flex flex-col h-[480px] reveal">
+        <h3 class="text-lg font-bold text-body mb-1">Client Onboarding</h3>
+        <p class="text-muted text-sm mb-6">New project flow</p>
+        <div class="flex-grow flex flex-col gap-3 overflow-y-auto">
+          <div class="p-4 rounded-xl border border-tertiary/20 bg-tertiary/5">
+            <div class="flex justify-between items-start mb-2"><span class="text-[10px] font-bold tracking-wisest text-tertiary">STAGE 01</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-tertiary/20 text-tertiary font-bold">READY</span></div>
+            <p class="font-bold text-sm text-body">Discovery Call</p>
+            <p class="text-xs text-muted mt-1">15-min call to understand project scope.</p>
+          </div>
+          <div class="flex justify-center"><span class="material-symbols-outlined text-muted">expand_more</span></div>
+          <div class="p-4 rounded-xl border border-wolf/30 bg-wolf/5">
+            <div class="flex justify-between items-start mb-2"><span class="text-[10px] font-bold tracking-widest text-wolf">STAGE 02</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-wolf/20 text-wolf font-bold">NEXT</span></div>
+            <p class="font-bold text-sm text-body">Proposal &amp; Quote</p>
+            <p class="text-xs text-muted mt-1">3-tier pricing sent within 24h.</p>
+          </div>
+          <div class="flex justify-center"><span class="material-symbols-outlined text-muted">expand_more</span></div>
+          <div class="p-4 rounded-xl border border-primary/20 bg-primary/5 opacity-60">
+            <div class="flex justify-between items-start mb-2"><span class="text-[10px] font-bold tracking-widest text-primary">STAGE 03</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-primary/20 text-primary font-bold">UPCOMING</span></div>
+            <p class="font-bold text-sm text-body">Build &amp; Deliver</p>
+            <p class="text-xs text-muted mt-1">50% upfront. 3-7 day delivery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Department Plans -->
+    <h3 class="text-lg font-bold text-body mb-4 flex items-center gap-2 reveal"><span class="material-symbols-outlined text-wolf">link</span> Service Tiers</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 reveal">
+      <div class="glass rounded-2xl p-6">
+        <div class="flex justify-between items-start mb-4">
+          <div class="w-10 h-10 rounded-xl bg-[#ff8800]/10 flex items-center justify-center text-[#ff8800]"><span class="material-symbols-outlined">web</span></div>
+          <span class="text-xs font-bold text-[#ff8800]">$50</span>
+        </div>
+        <h4 class="font-bold text-body mb-1">Starter Site</h4>
+        <p class="text-muted text-xs mb-4">Single landing page for local businesses.</p>
+        <div class="space-y-2">
+          <div class="flex justify-between text-[10px] font-bold tracking-widest text-muted"><span>PROGRESS</span><span class="text-body">100%</span></div>
+          <div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-[#ff8800] rounded-full w-full"></div></div>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-6 border-wolf/20">
+        <div class="flex justify-between items-start mb-4">
+          <div class="w-10 h-10 rounded-xl bg-wolf/10 flex items-center justify-center text-wolf"><span class="material-symbols-outlined">auto_awesome</span></div>
+          <span class="text-xs font-bold text-wolf">$100</span>
+        </div>
+        <h4 class="font-bold text-body mb-1">Business Site</h4>
+        <p class="text-muted text-xs mb-4">Multi-page with CMS and animations.</p>
+        <div class="space-y-2">
+          <div class="flex justify-between text-[10px] font-bold tracking-widest text-muted"><span>PROGRESS</span><span class="text-body">100%</span></div>
+          <div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-wolf to-[#00ff88] rounded-full w-full"></div></div>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-6">
+        <div class="flex justify-between items-start mb-4">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400"><span class="material-symbols-outlined">smart_toy</span></div>
+          <span class="text-xs font-bold text-purple-400">$200</span>
+        </div>
+        <h4 class="font-bold text-body mb-1">Premium Web App</h4>
+        <p class="text-muted text-xs mb-4">Full app with AI integration and custom features.</p>
+        <div class="space-y-2">
+          <div class="flex justify-between text-[10px] font-bold tracking-widest text-muted"><span>PROGRESS</span><span class="text-body">100%</span></div>
+          <div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-purple-400 rounded-full w-full"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 3: COMMAND CENTER -->
+  <!-- ============================================ -->
+  <section class="px-8 py-12" id="command">
+    <div class="mb-8 reveal">
+      <span class="text-[10px] font-bold tracking-[0.2em] text-tertiary uppercase">Module 02</span>
+      <h2 class="text-3xl font-black tracking-tight mt-2">Command <span class="text-tertiary">Center</span></h2>
+      <p class="text-muted text-sm mt-1">Growth trajectory, KPIs, and strategic milestones.</p>
+    </div>
+
+    <div class="grid grid-cols-12 gap-5 mb-8">
+      <!-- Executive Summary -->
+      <div class="col-span-12 lg:col-span-4 glass rounded-3xl p-6 flex flex-col justify-between border-l-4 border-l-tertiary reveal">
+        <div>
+          <span class="text-[10px] font-bold tracking-[0.2em] text-tertiary">EXECUTIVE SUMMARY</span>
+          <p class="text-body leading-relaxed mt-3 italic text-sm">
+            "Wolf Industries is in <span class="text-tertiary font-bold">launch phase</span>. AI business brain is fully operational. First clients being onboarded via <span class="text-wolf font-bold">Fiverr, Upwork</span>, and direct outreach."
+          </p>
+        </div>
+        <div class="mt-4 flex gap-6">
+          <div><span class="text-[10px] text-muted font-bold tracking-widest">RATING</span><p class="text-2xl font-black text-primary">4.9<span class="text-xs text-tertiary">/5</span></p></div>
+          <div><span class="text-[10px] text-muted font-bold tracking-widest">VELOCITY</span><p class="text-2xl font-black text-tertiary">1.0x</p></div>
+        </div>
+      </div>
+
+      <!-- Growth Trajectory Chart -->
+      <div class="col-span-12 lg:col-span-8 glass rounded-3xl p-8 relative overflow-hidden reveal">
+        <div class="flex justify-between items-start mb-8">
+          <div><span class="text-[10px] font-bold tracking-[0.2em] text-primary">REVENUE FORECAST</span><h3 class="text-xl font-bold">Growth Trajectory</h3></div>
+          <span class="px-3 py-1 rounded-full bg-tertiary/20 text-tertiary text-xs font-bold border border-tertiary/20">PROJECTED 2026</span>
+        </div>
+        <div class="h-[200px] w-full relative">
+          <svg class="absolute inset-0 w-full h-full" viewbox="0 0 800 200" preserveAspectRatio="none">
+            <defs>
+              <lineargradient id="chartGrad" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#b8ff00" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#b8ff00" stop-opacity="0"/>
+              </lineargradient>
+            </defs>
+            <!-- Grid lines -->
+            <line x1="0" y1="50" x2="800" y2="50" stroke="rgba(255,255,255,0.05)" />
+            <line x1="0" y1="100" x2="800" y2="100" stroke="rgba(255,255,255,0.05)" />
+            <line x1="0" y1="150" x2="800" y2="150" stroke="rgba(255,255,255,0.05)" />
+            <!-- Area -->
+            <path d="M0,190 L130,180 L260,165 L400,140 L540,110 L680,70 L800,30 L800,200 L0,200 Z" fill="url(#chartGrad)"/>
+            <!-- Primary line -->
+            <path d="M0,190 L130,180 L260,165 L400,140 L540,110 L680,70 L800,30" fill="none" stroke="#b8ff00" stroke-width="3" stroke-linecap="round"/>
+            <!-- Dots -->
+            <circle cx="0" cy="190" r="4" fill="#b8ff00"/>
+            <circle cx="130" cy="180" r="4" fill="#b8ff00"/>
+            <circle cx="260" cy="165" r="4" fill="#b8ff00"/>
+            <circle cx="400" cy="140" r="4" fill="#b8ff00"/>
+            <circle cx="540" cy="110" r="4" fill="#ffffff"/>
+            <circle cx="680" cy="70" r="4" fill="#ffffff" stroke="#b8ff00" stroke-width="2"/>
+            <circle cx="800" cy="30" r="4" fill="#ffffff" stroke="#b8ff00" stroke-width="2"/>
+            <!-- Labels -->
+            <text x="0" y="198" fill="#908fa0" font-size="10" font-family="JetBrains Mono">Jun</text>
+            <text x="130" y="198" fill="#908fa0" font-size="10" font-family="JetBrains Mono">Jul</text>
+            <text x="260" y="198" fill="#908fa0" font-size="10" font-family="JetBrains Mono">Aug</text>
+            <text x="400" y="198" fill="#908fa0" font-size="10" font-family="JetBrains Mono">Sep</text>
+            <text x="540" y="198" fill="#908fa0" font-size="10" font-family="JetBrains Mono">Oct</text>
+            <text x="680" y="198" fill="#908fa0" font-size="10" font-family="JetBrains Mono">Nov</text>
+            <text x="790" y="198" fill="#908fa0" font-size="10" font-family="JetBrains Mono">Dec</text>
+          </svg>
+          <div class="absolute top-2 right-2 text-[10px] text-muted font-mono">← Actual | Projected →</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Strategic Roadmap Timeline -->
+    <div class="glass rounded-3xl p-8 reveal">
+      <div class="flex justify-between items-center mb-8">
+        <div><span class="text-[10px] font-bold tracking-[0.2em] text-primary">STRATEGIC MILESTONES</span><h3 class="text-xl font-bold">Growth Roadmap 2026</h3></div>
+      </div>
+      <div class="relative pt-10 pb-4">
+        <div class="absolute top-1/2 left-0 w-full h-[2px] bg-white/5 -translate-y-1/2"></div>
+        <div class="absolute top-1/2 left-0 w-[25%] h-[2px] bg-gradient-to-r from-wolf to-tertiary -translate-y-1/2"></div>
+        <div class="grid grid-cols-4 gap-4 relative z-10">
+          <div class="flex flex-col items-center">
+            <div class="w-4 h-4 rounded-full bg-wolf mb-4 ring-8 ring-wolf/10"></div>
+            <p class="text-[10px] font-bold tracking-widest text-wolf mb-1">JUN-JUL</p>
+            <p class="font-bold text-sm text-center">First Clients</p>
+            <p class="text-[10px] text-muted text-center mt-1">$300-$750</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="w-4 h-4 rounded-full bg-wolf mb-4 ring-8 ring-wolf/10"></div>
+            <p class="text-[10px] font-bold tracking-widest text-wolf mb-1">AUG-SEP</p>
+            <p class="font-bold text-sm text-center">Build Momentum</p>
+            <p class="text-[10px] text-muted text-center mt-1">$1.2K-$2K</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="w-5 h-5 rounded-full bg-surface border-2 border-tertiary mb-3 ping"></div>
+            <p class="text-[10px] font-bold tracking-widest text-tertiary mb-1">Q4</p>
+            <p class="font-bold text-sm text-center">Scale</p>
+            <p class="text-[10px] text-muted text-center mt-1">$3.5K-$5K</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <div class="w-4 h-4 rounded-full bg-white/20 mb-4 ring-8 ring-white/5"></div>
+            <p class="text-[10px] font-bold tracking-widest text-muted mb-1">2027</p>
+            <p class="font-bold text-sm text-center text-muted">Agency</p>
+            <p class="text-[10px] text-muted text-center mt-1">$10K+/mo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 4: ADVANCED ANALYTICS -->
+  <!-- ============================================ -->
+  <section class="px-8 py-12" id="analytics">
+    <div class="mb-8 reveal">
+      <span class="text-[10px] font-bold tracking-[0.2em] text-secondary uppercase">Module 03</span>
+      <h2 class="text-3xl font-black tracking-tight mt-2">Advanced <span class="text-secondary">Analytics</span></h2>
+      <p class="text-muted text-sm mt-1">Metrics, KPIs, and market positioning.</p>
+    </div>
+
+    <div class="grid grid-cols-12 gap-5 mb-8">
+      <!-- Multi-variable Chart -->
+      <div class="col-span-12 md:col-span-8 glass rounded-3xl p-8 relative overflow-hidden h-[380px] reveal">
+        <div class="flex justify-between items-start mb-6">
+          <div><h3 class="text-xl font-bold mb-1">Growth Vectors</h3><p class="text-muted text-sm">Service demand by category</p></div>
+        </div>
+        <div class="flex items-end gap-6 h-[250px] px-2">
+          <!-- Bar: Websites -->
+          <div class="flex flex-col items-center gap-2 flex-1">
+            <div class="w-full relative h-[220px] bg-white/[0.03] rounded-t-xl overflow-hidden">
+              <div class="absolute bottom-0 w-full bg-gradient-to-t from-wolf/40 to-wolf rounded-t-xl" style="height:92%"><div class="w-full h-full backdrop-blur-sm"></div></div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-muted">WEBSITES</span>
+            <span class="text-xs font-bold text-wolf">92%</span>
+          </div>
+          <!-- Bar: UI -->
+          <div class="flex flex-col items-center gap-2 flex-1">
+            <div class="w-full relative h-[220px] bg-white/[0.03] rounded-t-xl overflow-hidden">
+              <div class="absolute bottom-0 w-full bg-gradient-to-t from-primary/40 to-primary rounded-t-xl" style="height:85%"><div class="w-full h-full backdrop-blur-sm"></div></div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-muted">UI DESIGN</span>
+            <span class="text-xs font-bold text-primary">85%</span>
+          </div>
+          <!-- Bar: AI Integration -->
+          <div class="flex flex-col items-center gap-2 flex-1">
+            <div class="w-full relative h-[220px] bg-white/[0.03] rounded-t-xl overflow-hidden">
+              <div class="absolute bottom-0 w-full bg-gradient-to-t from-purple-500/40 to-purple-400 rounded-t-xl" style="height:78%"><div class="w-full h-full backdrop-blur-sm"></div></div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-muted">AI</span>
+            <span class="text-xs font-bold text-purple-400">78%</span>
+          </div>
+          <!-- Bar: Motion -->
+          <div class="flex flex-col items-center gap-2 flex-1">
+            <div class="w-full relative h-[220px] bg-white/[0.03] rounded-t-xl overflow-hidden">
+              <div class="absolute bottom-0 w-full bg-gradient-to-t from-pink-500/40 to-pink-400 rounded-t-xl" style="height:64%"><div class="w-full h-full backdrop-blur-sm"></div></div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-muted">MOTION</span>
+            <span class="text-xs font-bold text-pink-400">64%</span>
+          </div>
+          <!-- Bar: Perf -->
+          <div class="flex flex-col items-center gap-2 flex-1">
+            <div class="w-full relative h-[220px] bg-white/[0.03] rounded-t-xl overflow-hidden">
+              <div class="absolute bottom-0 w-full bg-gradient-to-t from-[#ff8800]/40 to-[#ff8800] rounded-t-xl" style="height:58%"><div class="w-full h-full backdrop-blur-sm"></div></div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-muted">PERF</span>
+            <span class="text-xs font-bold text-[#ff8800]">58%</span>
+          </div>
+          <!-- Bar: Ecom -->
+          <div class="flex flex-col items-center gap-2 flex-1">
+            <div class="w-full relative h-[220px] bg-white/[0.03] rounded-t-xl overflow-hidden">
+              <div class="absolute bottom-0 w-full bg-gradient-to-t from-[#00d4ff]/40 to-[#00d4ff] rounded-t-xl" style="height:41%"><div class="w-full h-full backdrop-blur-sm"></div></div>
+            </div>
+            <span class="text-[10px] font-bold tracking-widest text-muted">E-COM</span>
+            <span class="text-xs font-bold text-[#00d4ff]">41%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- KPI Gauges -->
+      <div class="col-span-12 md:col-span-4 glass rounded-3xl p-8 reveal">
+        <h3 class="text-lg font-bold mb-6">Strategic Matrix</h3>
+        <div class="space-y-8">
+          <div class="flex items-center justify-between">
+            <div><p class="text-[10px] font-bold tracking-widest text-muted mb-1">SKILL RATING</p><span class="text-2xl font-black text-wolf">98.4<span class="text-xs text-tertiary ml-1">↑ New</span></span></div>
+            <div class="relative w-16 h-16">
+              <svg class="w-full h-full -rotate-90"><circle cx="32" cy="32" r="28" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="4"/><circle cx="32" cy="32" r="28" fill="none" stroke="#b8ff00" stroke-width="4" stroke-dasharray="175" stroke-dashoffset="20" stroke-linecap="round"/></svg>
+              <div class="absolute inset-0 flex items-center justify-center"><span class="material-symbols-outlined text-wolf text-sm">bolt</span></div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div><p class="text-[10px] font-bold tracking-widest text-muted mb-1">AI CAPABILITY</p><span class="text-2xl font-black text-purple-400">94.1<span class="text-xs text-primary ml-1">Elite</span></span></div>
+            <div class="relative w-16 h-16">
+              <svg class="w-full h-full -rotate-90"><circle cx="32" cy="32" r="28" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="4"/><circle cx="32" cy="32" r="28" fill="none" stroke="#a855f7" stroke-width="4" stroke-dasharray="175" stroke-dashoffset="15" stroke-linecap="round"/></svg>
+              <div class="absolute inset-0 flex items-center justify-center"><span class="material-symbols-outlined text-purple-400 text-sm">smart_toy</span></div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div><p class="text-[10px] font-bold tracking-widest text-muted mb-1">COMMUNICATION</p><span class="text-2xl font-black text-primary">96.8<span class="text-xs text-tertiary ml-1">↑</span></span></div>
+            <div class="relative w-16 h-16">
+              <svg class="w-full h-full -rotate-90"><circle cx="32" cy="32" r="28" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="4"/><circle cx="32" cy="32" r="28" fill="none" stroke="#c0c1ff" stroke-width="4" stroke-dasharray="175" stroke-dashoffset="10" stroke-linecap="round"/></svg>
+              <div class="absolute inset-0 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-sm">chat</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Regional / Client Target -->
+    <div class="grid grid-cols-12 gap-5 reveal">
+      <div class="col-span-12 md:col-span-7 glass rounded-3xl h-[400px] flex flex-col p-8 relative overflow-hidden">
+        <h3 class="text-xl font-bold mb-1">Target Client Distribution</h3>
+        <p class="text-muted text-sm mb-6">Where our efforts go</p>
+        <div class="flex-grow relative rounded-2xl overflow-hidden bg-white/[0.02]" style="background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 20px 20px;">
+          <div class="absolute top-[20%] left-[25%] w-4 h-4 bg-wolf rounded-full ping"></div>
+          <div class="absolute top-[20%] left-[25%] w-3 h-3 bg-wolf rounded-full shadow-[0_0_15px_#b8ff00]"></div>
+          <div class="absolute top-[35%] left-[55%] w-4 h-4 bg-primary rounded-full ping" style="animation-delay:1s"></div>
+          <div class="absolute top-[35%] left-[55%] w-3 h-3 bg-primary rounded-full shadow-[0_0_15px_#c0c1ff]"></div>
+          <div class="absolute top-[55%] left-[75%] w-4 h-4 bg-tertiary rounded-full ping" style="animation-delay:2s"></div>
+          <div class="absolute top-[55%] left-[75%] w-3 h-3 bg-tertiary rounded-full shadow-[0_0_15px_#4edea3]"></div>
+          <div class="absolute top-[65%] left-[30%] w-4 h-4 bg-secondary rounded-full ping" style="animation-delay:0.5s"></div>
+          <div class="absolute top-[65%] left-[30%] w-3 h-3 bg-secondary rounded-full shadow-[0_0_15px_#ddb7ff]"></div>
+          <!-- Tooltip -->
+          <div class="absolute bottom-6 left-6 glass p-4 rounded-2xl border-wolf/20 max-w-[200px]">
+            <p class="text-[10px] font-bold tracking-widest text-wolf mb-1">PRIMARY</p>
+            <p class="text-sm font-bold">US/UK Startups</p>
+            <p class="text-2xl font-black mt-1 text-wolf">50%</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 md:col-span-5 glass rounded-3xl p-8 flex flex-col h-[400px] reveal">
+        <h3 class="text-xl font-bold mb-6">Competitive Edge</h3>
+        <div class="flex-grow flex flex-col gap-4 justify-center">
+          <div class="flex items-center gap-4">
+            <span class="text-xs font-bold text-muted w-20 text-right">Price</span>
+            <div class="flex-grow h-3 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-[#ff8800] to-[#ff8800]/30 rounded-full" style="width:35%"></div></div>
+            <span class="text-xs font-bold text-[#ff8800]">Ultra Low</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-xs font-bold text-muted w-20 text-right">Quality</span>
+            <div class="flex-grow h-3 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-wolf to-wolf/30 rounded-full" style="width:88%"></div></div>
+            <span class="text-xs font-bold text-wolf">Premium</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-xs font-bold text-muted w-20 text-right">Speed</span>
+            <div class="flex-grow h-3 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-tertiary to-tertiary/30 rounded-full" style="width:90%"></div></div>
+            <span class="text-xs font-bold text-tertiary">Fast</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-xs font-bold text-muted w-20 text-right">AI Skills</span>
+            <div class="flex-grow h-3 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-purple-400 to-purple-400/30 rounded-full" style="width:95%"></div></div>
+            <span class="text-xs font-bold text-purple-400">Rare</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="text-xs font-bold text-muted w-20 text-right">English</span>
+            <div class="flex-grow h-3 bg-white/5 rounded-full overflow-hidden"><div class="h-full bg-gradient-to-r from-primary to-primary/30 rounded-full" style="width:92%"></div></div>
+            <span class="text-xs font-bold text-primary">Fluent</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 5: OPERATIONS LEDGER -->
+  <!-- ============================================ -->
+  <section class="px-8 py-12" id="operations">
+    <div class="mb-8 reveal">
+      <span class="text-[10px] font-bold tracking-[0.2em] text-wolf uppercase">Module 04</span>
+      <h2 class="text-3xl font-black tracking-tight mt-2">Operations <span class="text-wolf">Ledger</span></h2>
+      <p class="text-muted text-sm mt-1">Pipeline status, risk, and system health.</p>
+    </div>
+
+    <!-- Top Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+      <div class="glass gradient-border rounded-2xl p-6 flex items-center justify-between reveal">
+        <div><p class="text-[10px] font-bold tracking-widest text-tertiary mb-1">PIPELINE</p><h3 class="text-xl font-black">Active Leads</h3><p class="text-muted text-xs mt-1">0 in pipeline</p></div>
+        <div class="relative w-20 h-20 flex items-center justify-center">
+          <svg class="w-full h-full -rotate-90"><circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="6"/><circle cx="40" cy="40" r="34" fill="none" stroke="#b8ff00" stroke-width="6" stroke-dasharray="213" stroke-dashoffset="170" stroke-linecap="round"/></svg>
+          <span class="absolute text-lg font-black">20%</span>
+        </div>
+      </div>
+      <div class="glass gradient-border rounded-2xl p-6 flex items-center justify-between reveal">
+        <div><p class="text-[10px] font-bold tracking-widest text-wolf mb-1">PLATFORMS</p><h3 class="text-xl font-black">Live Status</h3><p class="text-muted text-xs mt-1">Building profiles...</p></div>
+        <div class="relative w-20 h-20 flex items-center justify-center">
+          <svg class="w-full h-full -rotate-90"><circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="6"/><circle cx="40" cy="40" r="34" fill="none" stroke="#4edea3" stroke-width="6" stroke-dasharray="213" stroke-dashoffset="40" stroke-linecap="round"/></svg>
+          <span class="absolute text-lg font-black text-tertiary">81%</span>
+        </div>
+      </div>
+      <div class="glass gradient-border rounded-2xl p-6 flex items-center justify-between reveal">
+        <div><p class="text-[10px] font-bold tracking-widest text-primary mb-1">BUSINESS BRAIN</p><h3 class="text-xl font-black">AI Status</h3><p class="text-muted text-xs mt-1">5/5 modules active</p></div>
+        <div class="flex items-center gap-1">
+          <span class="text-4xl font-black text-primary">100%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pipeline Table -->
+    <div class="glass rounded-2xl overflow-hidden reveal">
+      <div class="px-8 py-6 flex justify-between items-center border-b border-white/5 bg-white/5">
+        <h4 class="text-lg font-bold">Client Pipeline</h4>
+        <div class="flex gap-3">
+          <span class="px-3 py-1 rounded-lg bg-wolf/10 text-wolf text-xs font-bold border border-wolf/20">Phase: Launch</span>
+          <span class="px-3 py-1 rounded-lg bg-tertiary/10 text-tertiary text-xs font-bold border border-tertiary/20">Target: 5 clients</span>
+        </div>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="bg-surface-darkest/50 border-b border-white/5">
+              <th class="px-8 py-4 text-[10px] font-bold tracking-widest text-muted uppercase">Stage</th>
+              <th class="px-8 py-4 text-[10px] font-bold tracking-widest text-muted uppercase">Channel</th>
+              <th class="px-8 py-4 text-[10px] font-bold tracking-widest text-muted uppercase">Status</th>
+              <th class="px-8 py-4 text-[10px] font-bold tracking-widest text-muted uppercase">Target</th>
+              <th class="px-8 py-4 text-[10px] font-bold tracking-widest text-muted uppercase">Progress</th>
+              <th class="px-8 py-4 text-[10px] font-bold tracking-widest text-muted uppercase text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5">
+            <tr class="hover:bg-white/[0.02] transition-all">
+              <td class="px-8 py-5 font-mono text-sm text-wolf">#FIVERR-01</td>
+              <td class="px-8 py-5"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_10px_#4edea3]"></span><span class="font-bold text-sm">Fiverr</span></div></td>
+              <td class="px-8 py-5"><span class="px-3 py-1 rounded-full text-[10px] font-black uppercase bg-tertiary/20 text-tertiary border border-tertiary/20">3 Gigs Live</span></td>
+              <td class="px-8 py-5 text-xs">$50-$200/project</td>
+              <td class="px-8 py-5"><div class="w-24 bg-white/5 h-1.5 rounded-full overflow-hidden"><div class="bg-tertiary h-full w-full rounded-full"></div></div></td>
+              <td class="px-8 py-5 text-right"><button class="p-2 rounded-lg hover:bg-white/10 text-muted hover:text-wolf"><span class="material-symbols-outlined text-sm">open_in_new</span></button></td>
+            </tr>
+            <tr class="hover:bg-white/[0.02] transition-all">
+              <td class="px-8 py-5 font-mono text-sm text-primary">#UPW-01</td>
+              <td class="px-8 py-5"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_#c0c1ff]"></span><span class="font-bold text-sm">Upwork</span></div></td>
+              <td class="px-8 py-5"><span class="px-3 py-1 rounded-full text-[10px] font-black uppercase bg-primary/20 text-primary border border-primary/20">Applying</span></td>
+              <td class="px-8 py-5 text-xs">$100-$200/project</td>
+              <td class="px-8 py-5"><div class="w-24 bg-white/5 h-1.5 rounded-full overflow-hidden"><div class="bg-primary h-full w-[60%] rounded-full"></div></div></td>
+              <td class="px-8 py-5 text-right"><button class="p-2 rounded-lg hover:bg-white/10 text-muted hover:text-wolf"><span class="material-symbols-outlined text-sm">open_in_new</span></button></td>
+            </tr>
+            <tr class="hover:bg-white/[0.02] transition-all">
+              <td class="px-8 py-5 font-mono text-sm text-secondary">#LKD-01</td>
+              <td class="px-8 py-5"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_10px_#ddb7ff]"></span><span class="font-bold text-sm">LinkedIn</span></div></td>
+              <td class="px-8 py-5"><span class="px-3 py-1 rounded-full text-[10px] font-black uppercase bg-secondary/20 text-secondary border border-secondary/20">Outreach</span></td>
+              <td class="px-8 py-5 text-xs">50 connections/wk</td>
+              <td class="px-8 py-5"><div class="w-24 bg-white/5 h-1.5 rounded-full overflow-hidden"><div class="bg-secondary h-full w-[35%] rounded-full"></div></div></td>
+              <td class="px-8 py-5 text-right"><button class="p-2 rounded-lg hover:bg-white/10 text-muted hover:text-wolf"><span class="material-symbols-outlined text-sm">open_in_new</span></button></td>
+            </tr>
+            <tr class="hover:bg-white/[0.02] transition-all">
+              <td class="px-8 py-5 font-mono text-sm text-[#ff8800]">#DIR-01</td>
+              <td class="px-8 py-5"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-[#ff8800] shadow-[0_0_10px_#ff8800]"></span><span class="font-bold text-sm">Direct</span></div></td>
+              <td class="px-8 py-5"><span class="px-3 py-1 rounded-full text-[10px] font-black uppercase bg-[#ff8800]/20 text-[#ff8800] border border-[#ff8800]/20">Cold Email</span></td>
+              <td class="px-8 py-5 text-xs">20 emails/wk</td>
+              <td class="px-8 py-5"><div class="w-24 bg-white/5 h-1.5 rounded-full overflow-hidden"><div class="bg-[#ff8800] h-full w-[15%] rounded-full"></div></div></td>
+              <td class="px-8 py-5 text-right"><button class="p-2 rounded-lg hover:bg-white/10 text-muted hover:text-wolf"><span class="material-symbols-outlined text-sm">open_in_new</span></button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="px-8 py-4 border-t border-white/5 flex justify-between items-center text-muted text-xs">
+        <span>4 active channels</span>
+        <span class="text-wolf font-bold">Target: 5 paying clients by Sep 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 6: PRICING -->
+  <!-- ============================================ -->
+  <section class="px-8 py-12" id="pricing">
+    <div class="mb-8 reveal">
+      <span class="text-[10px] font-bold tracking-[0.2em] text-wolf uppercase">Service Packages</span>
+      <h2 class="text-3xl font-black tracking-tight mt-2">Pricing <span class="neon-text">Tiers</span></h2>
+      <p class="text-muted text-sm mt-1">Premium quality. Launch pricing. No hidden fees.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
+      <!-- Starter -->
+      <div class="glass rounded-3xl p-8 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#ff8800] to-[#ff8800]/30"></div>
+        <p class="text-[10px] font-bold tracking-[0.2em] text-[#ff8800] mb-4">STARTER</p>
+        <h3 class="text-5xl font-black text-[#ff8800] mb-2">$50</h3>
+        <p class="text-sm text-muted mb-6">Single-page site or landing page</p>
+        <ul class="text-left space-y-3 mb-8">
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-[#ff8800] text-sm">check_circle</span> 1 responsive page</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-[#ff8800] text-sm">check_circle</span> Basic SEO tags</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-[#ff8800] text-sm">check_circle</span> Contact form</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-[#ff8800] text-sm">check_circle</span> Mobile-optimized</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-[#ff8800] text-sm">check_circle</span> 3-day delivery</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-[#ff8800] text-sm">check_circle</span> 1 revision round</li>
+        </ul>
+        <button class="w-full py-3 rounded-xl bg-[#ff8800]/20 text-[#ff8800] font-bold hover:bg-[#ff8800]/30 transition-all">Get Started</button>
+      </div>
+      <!-- Business -->
+      <div class="glass rounded-3xl p-8 text-center relative overflow-hidden border-wolf/30 shadow-[0_0_40px_rgba(184,255,0,0.1)]">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-wolf to-tertiary"></div>
+        <span class="inline-block px-4 py-1 rounded-full bg-wolf/20 text-wolf text-[10px] font-black mb-4 tracking-widest">MOST POPULAR</span>
+        <p class="text-[10px] font-bold tracking-[0.2em] text-wolf mb-4 mt-2">BUSINESS</p>
+        <h3 class="text-5xl font-black neon-text mb-2">$100</h3>
+        <p class="text-sm text-muted mb-6">Multi-page website with CMS and motion</p>
+        <ul class="text-left space-y-3 mb-8">
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-wolf text-sm">check_circle</span> Up to 5 pages</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-wolf text-sm">check_circle</span> Custom UI + motion</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-wolf text-sm">check_circle</span> CMS integration</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-wolf text-sm">check_circle</span> Performance optimised</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-wolf text-sm">check_circle</span> Analytics setup</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-wolf text-sm">check_circle</span> 5-day delivery</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-wolf text-sm">check_circle</span> 2 revision rounds</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-wolf text-sm">check_circle</span> 30-day support</li>
+        </ul>
+        <button class="w-full py-3 rounded-xl bg-gradient-to-r from-wolf to-tertiary text-surface font-black hover:scale-[1.02] transition-all neon-glow">Get Started</button>
+      </div>
+      <!-- Premium -->
+      <div class="glass rounded-3xl p-8 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 to-purple-400/30"></div>
+        <p class="text-[10px] font-bold tracking-[0.2em] text-purple-400 mb-4">PREMIUM</p>
+        <h3 class="text-5xl font-black text-purple-400 mb-2">$200</h3>
+        <p class="text-sm text-muted mb-6">Full web app with AI integration</p>
+        <ul class="text-left space-y-3 mb-8">
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-purple-400 text-sm">check_circle</span> Unlimited pages</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-purple-400 text-sm">check_circle</span> Premium animations</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-purple-400 text-sm">check_circle</span> AI chatbot / automation</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-purple-400 text-sm">check_circle</span> Custom API integration</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-purple-400 text-sm">check_circle</span> Database + auth</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-purple-400 text-sm">check_circle</span> 7-day delivery</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-purple-400 text-sm">check_circle</span> 3 revision rounds</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-purple-400 text-sm">check_circle</span> 60-day support</li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-purple-400 text-sm">check_circle</span> Full documentation</li>
+        </ul>
+        <button class="w-full py-3 rounded-xl bg-purple-400/20 text-purple-400 font-bold hover:bg-purple-400/30 transition-all">Get Started</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 7: GROWTH ROADMAP -->
+  <!-- ============================================ -->
+  <section class="px-8 py-12" id="roadmap">
+    <div class="mb-8 reveal">
+      <span class="text-[10px] font-bold tracking-[0.2em] text-tertiary uppercase">Future Plans</span>
+      <h2 class="text-3xl font-black tracking-tight mt-2">Growth <span class="text-tertiary">Roadmap</span></h2>
+      <p class="text-muted text-sm mt-1">From zero to full-stack agency.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-5 reveal">
+      <div class="glass rounded-2xl p-6 border-l-4 border-l-wolf">
+        <span class="text-[10px] font-bold tracking-widest text-wolf">PHASE 1 / NOW</span>
+        <h4 class="font-bold mt-2 mb-3">Launch</h4>
+        <ul class="space-y-2 text-xs text-muted">
+          <li> 3 platforms live</li>
+          <li> 3 portfolio projects</li>
+          <li> 70 cold outreach</li>
+          <li> First paying client</li>
+          <li> AI modules: 5/5 active</li>
+        </ul>
+        <div class="mt-4 pt-4 border-t border-white/5"><span class="text-xs font-bold text-wolf">$0 $500/mo</span></div>
+      </div>
+      <div class="glass rounded-2xl p-6 border-l-4 border-l-tertiary">
+        <span class="text-[10px] font-bold tracking-widest text-tertiary">PHASE 2 / MONTH 2-3</span>
+        <h4 class="font-bold mt-2 mb-3">Momentum</h4>
+        <ul class="space-y-2 text-xs text-muted">
+          <li> Content engine running</li>
+          <li> 3-5 active clients</li>
+          <li> Raise rates after reviews</li>
+          <li> Retainer packages</li>
+          <li> Niche identified</li>
+        </ul>
+        <div class="mt-4 pt-4 border-t border-t-wolf/10"><span class="text-xs font-bold text-tertiary">$750-$2K/mo</span></div>
+      </div>
+      <div class="glass rounded-2xl p-6 border-l-4 border-l-purple-400">
+        <span class="text-[10px] font-bold tracking-widest text-purple-400">PHASE 3 / MONTH 4-6</span>
+        <h4 class="font-bold mt-2 mb-3">Scale</h4>
+        <ul class="space-y-2 text-xs text-muted">
+          <li> 8 active clients</li>
+          <li> First team member</li>
+          <li> Template marketplace</li>
+          <li> LinkedIn 1000+ followers</li>
+          <li> Full premium pricing</li>
+        </ul>
+        <div class="mt-4 pt-4 border-t border-white/5"><span class="text-xs font-bold text-purple-400">$3.5K-$5K/mo</span></div>
+      </div>
+      <div class="glass rounded-2xl p-6 border-l-4 border-l-[#ff8800]">
+        <span class="text-[10px] font-bold tracking-widest text-[#ff8800]">PHASE 4 / 2027+</span>
+        <h4 class="font-bold mt-2 mb-3">Agency</h4>
+        <ul class="space-y-2 text-xs text-muted">
+          <li> Full team (devs, design, PM)</li>
+          <li> Productized services</li>
+          <li> US/UK primary market</li>
+          <li> Thought leadership</li>
+          <li> Multiple income streams</li>
+        </ul>
+        <div class="mt-4 pt-4 border-t border-white/5"><span class="text-xs font-bold text-[#ff8800]">$10K-$30K/mo</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 8: CONTACT -->
+  <!-- ============================================ -->
+  <section class="px-8 py-12" id="contact">
+    <div class="mb-8 reveal">
+      <span class="text-[10px] font-bold tracking-[0.2em] text-wolf uppercase">Get In Touch</span>
+      <h2 class="text-3xl font-black tracking-tight mt-2">Start a <span class="neon-text">Project</span></h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
+      <div class="glass rounded-3xl p-8">
+        <h3 class="text-xl font-bold mb-6">Wolf Industries</h3>
+        <div class="space-y-4">
+          <div class="flex items-center gap-4"><span class="material-symbols-outlined text-wolf">person</span><span class="text-sm">H. Sadew — Founder &amp; Lead Developer</span></div>
+          <div class="flex items-center gap-4"><span class="material-symbols-outlined text-tertiary">location_on</span><span class="text-sm">Colombo, Sri Lanka</span></div>
+          <div class="flex items-center gap-4"><span class="material-symbols-outlined text-primary">language</span><span class="text-sm">Fiverr | Upwork | LinkedIn | Direct</span></div>
+          <div class="flex items-center gap-4"><span class="material-symbols-outlined text-secondary">attach_money</span><span class="text-sm">USD preferred. Launch pricing: $50 / $100 / $200</span></div>
+          <div class="flex items-center gap-4"><span class="material-symbols-outlined text-[#ff8800]">smart_toy</span><span class="text-sm">AI-powered business brain with 5 modules</span></div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-8">
+        <h3 class="text-xl font-bold mb-6">5 AI Modules Included</h3>
+        <div class="space-y-3">
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-wolf/5 border border-wolf/10"><span class="material-symbols-outlined text-wolf text-sm">chat</span><span class="text-sm font-medium">Client Communication</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-primary/5 border border-primary/10"><span class="material-symbols-outlined text-primary text-sm">campaign</span><span class="text-sm font-medium">Sales &amp; Lead Gen</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-tertiary/5 border border-tertiary/10"><span class="material-symbols-outlined text-tertiary text-sm">share</span><span class="text-sm font-medium">Social Media &amp; Content</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-secondary/5 border border-secondary/10"><span class="material-symbols-outlined text-secondary text-sm">ads_click</span><span class="text-sm font-medium">Advertising &amp; Copy</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-purple-500/5 border border-purple-400/10"><span class="material-symbols-outlined text-purple-400 text-sm">description</span><span class="text-sm font-medium">Business Operations</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="px-8 py-8 border-t border-white/5 mt-8">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        <h3 class="text-lg font-black neon-text">WOLF INDUSTRIES</h3>
+        <p class="text-[10px] text-muted tracking-widest uppercase">Premium Freelance Web Development / Colombo, Sri Lanka</p>
+      </div>
+      <div class="flex items-center gap-6 text-xs text-muted">
+        <span> 2026 Wolf Industries</span>
+        <span class="w-2 h-2 rounded-full bg-wolf ping"></span>
+        <span class="text-wolf font-bold">Building the future</span>
+      </div>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Nav active state on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a[href^="#"]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 100;
+      if (scrollY >= top) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.classList.remove('nav-active');
+      if (link.getAttribute('href') === '#' + current) link.classList.add('nav-active');
+    });
+  });
+</script>
+</body>
+</html>

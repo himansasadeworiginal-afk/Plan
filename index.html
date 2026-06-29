@@ -201,6 +201,9 @@
     <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium" href="#content">
       <span class="material-symbols-outlined text-lg">edit_note</span> Social Media &amp; Content
     </a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium" href="#ads">
+      <span class="material-symbols-outlined text-lg">ads_click</span> Advertising &amp; Copy
+    </a>
   </nav>
   <div class="mt-auto pt-6 border-t border-white/5">
     <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-wolf hover:bg-wolf/10 rounded-xl transition-all mb-2" href="#contact">
@@ -2006,6 +2009,288 @@
   <div class="section-divider"></div>
 
   <!-- ============================================ -->
+  <!-- SECTION: ADVERTISING & COPY -->
+  <!-- ============================================ -->
+  <section class="px-4 md:px-8 py-6 md:py-12" id="ads">
+    <div class="mb-8 reveal">
+      <span class="text-[10px] font-bold tracking-[0.2em] text-[#EA4335] uppercase">Module 04 — AI Business Brain</span>
+      <h2 class="text-3xl font-black tracking-tight mt-2">Advertising &amp; <span class="text-[#EA4335]">Copy</span></h2>
+      <p class="text-muted text-sm mt-1">Google Ads, Facebook Ads, landing pages, A/B test headlines, and testimonial requests. Ready to launch.</p>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="flex flex-wrap gap-2 mb-8 reveal">
+      <button class="px-4 py-2 rounded-xl bg-[#EA4335]/20 text-[#EA4335] text-xs font-bold border border-[#EA4335]/30" onclick="showAdsTab('google', this)">Google Ads</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showAdsTab('facebook', this)">Facebook Ads</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showAdsTab('landing', this)">Landing Pages</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showAdsTab('abtest', this)">A/B Testing</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showAdsTab('testimonials', this)">Testimonials</button>
+    </div>
+
+    <!-- TAB: Google Ads -->
+    <div class="ads-tab reveal" id="ads-google">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-[#EA4335]">ads_click</span> Google Ads — 3 Full Ad Sets</h3>
+        <p class="text-muted text-sm mb-4">Headlines (30 chars max), Descriptions (90 chars x2). Lead with pain point. Include CTA. Give 3 variations per campaign.</p>
+        <div class="space-y-4">
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#EA4335] font-bold mb-2">AD SET 1: Search — "Web Developer"</p>
+            <p class="mb-1 text-body font-bold">Headline 1:</p>
+            <p class="mb-1">Expert Web Developer For Hire</p>
+            <p class="mb-1 text-body font-bold">Headline 2:</p>
+            <p class="mb-1">Fast Sites That Convert Visitors</p>
+            <p class="mb-1 text-body font-bold">Headline 3:</p>
+            <p class="mb-1">Get Your Site Live In 5 Days</p>
+            <p class="mb-1 text-body font-bold">Description 1 (90 chars):</p>
+            <p class="mb-1">Premium web development for small businesses. Mobile-optimized, fast-loading, conversion-focused sites. Starting at $50.</p>
+            <p class="mb-0 text-body font-bold">Description 2 (90 chars):</p>
+            <p class="mb-0">Don't let a bad website cost you customers. Professional design + development. 5-day delivery. Free consultation.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#EA4335] font-bold mb-2">AD SET 2: Search — "Website Redesign"</p>
+            <p class="mb-1 text-body font-bold">Headline 1:</p>
+            <p class="mb-1">Tired Of Your Old Website?</p>
+            <p class="mb-1 text-body font-bold">Headline 2:</p>
+            <p class="mb-1">Redesign Your Site. Get More Leads</p>
+            <p class="mb-1 text-body font-bold">Headline 3:</p>
+            <p class="mb-1">Modern Sites At Fair Prices</p>
+            <p class="mb-1 text-body font-bold">Description 1 (90 chars):</p>
+            <p class="mb-1">Is your website losing you customers? We build fast, modern sites that convert. Free audit. Starting at $100.</p>
+            <p class="mb-0 text-body font-bold">Description 2 (90 chars):</p>
+            <p class="mb-1">Outdated websites kill trust. Get a premium redesign in 5-7 days. Mobile-first. SEO-ready. Proven results.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#EA4335] font-bold mb-2">AD SET 3: Search — "Landing Page Designer"</p>
+            <p class="mb-1 text-body font-bold">Headline 1:</p>
+            <p class="mb-1">High-Converting Landing Pages</p>
+            <p class="mb-1 text-body font-bold">Headline 2:</p>
+            <p class="mb-1">Turn Visitors Into Customers</p>
+            <p class="mb-1 text-body font-bold">Headline 3:</p>
+            <p class="mb-1">Landing Pages Starting At $50</p>
+            <p class="mb-1 text-body font-bold">Description 1 (90 chars):</p>
+            <p class="mb-1">Stop wasting ad spend on bad landing pages. We build pages that convert. Fast delivery. 3-day turnaround.</p>
+            <p class="mb-0 text-body font-bold">Description 2 (90 chars):</p>
+            <p class="mb-0">Your ads are only as good as your landing page. Get a page that actually converts. Free mockup. Starting at $50.</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-[#EA4335] text-sm">checklist</span> Google Ads Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-[#EA4335]/5 border border-[#EA4335]/10"><p class="text-xs font-bold text-[#EA4335] mb-1">LEAD WITH PAIN POINT</p><p class="text-[10px] text-muted">"Tired of your old website?" beats "We are a web development company".</p></div>
+          <div class="p-3 rounded-xl bg-[#EA4335]/5 border border-[#EA4335]/10"><p class="text-xs font-bold text-[#EA4335] mb-1">INCLUDE SPECIFIC NUMBERS</p><p class="text-[10px] text-muted">"5-day delivery" and "$50 starting" build trust and qualify leads.</p></div>
+          <div class="p-3 rounded-xl bg-[#EA4335]/5 border border-[#EA4335]/10"><p class="text-xs font-bold text-[#EA4335] mb-1">ONE CTA PER AD</p><p class="text-[10px] text-muted">"Get your free audit" — clear, specific, low commitment.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Facebook Ads -->
+    <div class="ads-tab hidden reveal" id="ads-facebook">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-[#1877F2]">campaign</span> Facebook/Instagram Ads</h3>
+        <p class="text-muted text-sm mb-4">Hook (stops the scroll) → Problem → Solution → Proof → CTA. Short form (under 100 words) and long form versions.</p>
+        <div class="space-y-4">
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#1877F2] font-bold mb-2">AD 1: Short Form (Best for mobile feed)</p>
+            <p class="mb-1 text-body font-bold"> Hook:</p>
+            <p class="mb-2">Your website is losing you customers.</p>
+            <p class="mb-1 text-body font-bold"> Body:</p>
+            <p class="mb-2">Most business websites convert at less than 1%. That means 99 out of 100 visitors leave without buying. We fix that. Premium web development. 5-day delivery. Starting at $50.</p>
+            <p class="mb-0 text-body font-bold"> CTA:</p>
+            <p class="mb-0">Get your free website audit →</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#1877F2] font-bold mb-2">AD 2: Long Form (Best for retargeting/consideration)</p>
+            <p class="mb-1 text-body font-bold"> Hook:</p>
+            <p class="mb-2">I rebuilt a restaurant's website. Online orders went up 34% in 2 weeks.</p>
+            <p class="mb-1 text-body font-bold"> Body:</p>
+            <p class="mb-2">The owner came to me frustrated. His site looked "fine" but wasn't making him money. We rebuilt it from scratch. Mobile-first. Fast-loading. One clear CTA. The result? 34% more online orders in 14 days. That's the power of a website that actually works. If your site isn't paying for itself, you're leaving money on the table.</p>
+            <p class="mb-1 text-body font-bold"> Proof:</p>
+            <p class="mb-2">"H. Sadew completely transformed our online presence. Best $200 we ever spent." — [Client Name], [Business]</p>
+            <p class="mb-0 text-body font-bold"> CTA:</p>
+            <p class="mb-0">Let's build you a website that sells. Message me or visit wolfindustries.dev</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#1877F2] font-bold mb-2">AD 3: Carousel Ad (Best for showcasing work)</p>
+            <p class="mb-1 text-body font-bold"> Hook:</p>
+            <p class="mb-2">5 websites we built last month (and the results they got)</p>
+            <p class="mb-1 text-body font-bold"> Slides:</p>
+            <p class="mb-1"> Slide 1: "Restaurant site → 34% more orders"</p>
+            <p class="mb-1"> Slide 2: "SaaS landing page → 4.8% conversion rate"</p>
+            <p class="mb-1"> Slide 3: "E-commerce store → 2x revenue in 30 days"</p>
+            <p class="mb-1"> Slide 4: "Portfolio site → 3 new client inquiries in 1 week"</p>
+            <p class="mb-2"> Slide 5: "Your next project? Let's talk. Starting at $50."</p>
+            <p class="mb-0 text-body font-bold"> CTA:</p>
+            <p class="mb-0">Swipe to see what's possible → Message us today</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-[#1877F2] text-sm">checklist</span> Facebook Ads Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-[#1877F2]/5 border border-[#1877F2]/10"><p class="text-xs font-bold text-[#1877F2] mb-1">HOOK STOPS THE SCROLL</p><p class="text-[10px] text-muted">First 3 words decide if they keep reading. Make them count.</p></div>
+          <div class="p-3 rounded-xl bg-[#1877F2]/5 border border-[#1877F2]/10"><p class="text-xs font-bold text-[#1877F2] mb-1">SHOW, DON'T TELL</p><p class="text-[10px] text-muted">"34% more orders" beats "we build great websites".</p></div>
+          <div class="p-3 rounded-xl bg-[#1877F2]/5 border border-[#1877F2]/10"><p class="text-xs font-bold text-[#1877F2] mb-1">RETARGETING WINS</p><p class="text-[10px] text-muted">First ad = awareness. Second ad = proof. Third ad = CTA. Don't sell on first touch.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Landing Pages -->
+    <div class="ads-tab hidden reveal" id="ads-landing">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-wolf">web</span> Landing Page Copy Template</h3>
+        <p class="text-muted text-sm mb-4">Hero → Problem → Solution/Features → Social Proof → FAQ → Final CTA. Optimised for conversion.</p>
+        <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+          <p class="text-wolf font-bold mb-2">SECTION 1: HERO</p>
+          <p class="mb-1 text-body font-bold"> Headline:</p>
+          <p class="mb-1">Websites That Actually Convert Visitors Into Customers</p>
+          <p class="mb-1 text-body font-bold"> Subheadline:</p>
+          <p class="mb-2">Stop losing 99% of your visitors. We build fast, beautiful, conversion-focused websites for small businesses and startups. Starting at $50.</p>
+          <p class="mb-0 text-body font-bold"> CTA Button: Get Your Free Audit</p>
+        </div>
+        <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted mt-4">
+          <p class="text-tertiary font-bold mb-2">SECTION 2: PROBLEM</p>
+          <p class="mb-2">Your website is losing you customers. Right now. While you read this.</p>
+          <p class="mb-2">Most business websites convert at less than 1%. That's 99 out of 100 visitors leaving without buying, calling, or even remembering your name.</p>
+          <p class="mb-2">The reasons? Slow load times. Confusing navigation. No clear call-to-action. Looks bad on mobile.</p>
+          <p class="mb-2">You're spending money on ads, SEO, and social media — but your website is a leaky bucket.</p>
+          <p class="mb-2">We fix that.</p>
+        </div>
+        <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted mt-4">
+          <p class="text-primary font-bold mb-2">SECTION 3: SOLUTION / FEATURES</p>
+          <p class="mb-2">Wolf Industries builds websites that work as hard as you do:</p>
+          <p class="mb-1"> <span class="text-wolf"> Lightning Fast:</span> Under 1-second load time. Speed = conversions.</p>
+          <p class="mb-1"> <span class="text-wolf"> Mobile-First:</span> 70% of visitors are on phones. We design for them first.</p>
+          <p class="mb-1"> <span class="text-wolf"> Conversion-Optimized:</span> One clear CTA. No clutter. No confusion.</p>
+          <p class="mb-1"> <span class="text-wolf"> SEO-Ready:</span> Built to rank. Clean code. Fast speeds. Proper structure.</p>
+          <p class="mb-2"> <span class="text-wolf"> 5-Day Delivery:</span> No 12-week timelines. We launch fast.</p>
+        </div>
+        <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted mt-4">
+          <p class="text-secondary font-bold mb-2">SECTION 4: SOCIAL PROOF</p>
+          <p class="mb-2">"Our website was converting at 0.8%. After Wolf Industries rebuilt it, we hit 4.2%. That's a 425% increase." — [Client Name], [Business]</p>
+          <p class="mb-2">"H. Sadew delivered in 4 days. The site looks incredible and we've already gotten 3 new client inquiries." — [Client Name], [Business]</p>
+          <p class="mb-0">"Best $200 we ever spent. Our online orders are up 34%." — [Client Name], [Business]</p>
+        </div>
+        <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted mt-4">
+          <p class="text-[#ff8800] font-bold mb-2">SECTION 5: FAQ</p>
+          <p class="mb-1 text-body font-bold"> How long does it take?</p>
+          <p class="mb-2">Most projects are delivered in 3-7 days depending on scope.</p>
+          <p class="mb-1 text-body font-bold"> Do you work with clients outside Sri Lanka?</p>
+          <p class="mb-2">Yes! We work with clients worldwide. All communication is in English.</p>
+          <p class="mb-1 text-body font-bold"> What do I need to provide?</p>
+          <p class="mb-2">Just your business info, branding (if any), and content. We handle everything else.</p>
+          <p class="mb-1 text-body font-bold"> Do you offer revisions?</p>
+          <p class="mb-2">Yes! Every package includes 1-3 rounds of revisions depending on the tier.</p>
+          <p class="mb-1 text-body font-bold"> What's your refund policy?</p>
+          <p class="mb-0">50% deposit is non-refundable once work begins. If we can't deliver, you get a full refund.</p>
+        </div>
+        <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted mt-4">
+          <p class="text-wolf font-bold mb-2">SECTION 6: FINAL CTA</p>
+          <p class="mb-2">Stop losing customers to a bad website.</p>
+          <p class="mb-2">Get a website that actually converts — starting at $50.</p>
+          <p class="mb-2 text-body font-bold"> [Get Your Free Audit] or [Start Your Project]</p>
+          <p class="mb-2">No pitch. No pressure. Just honest advice on what your website needs.</p>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-wolf text-sm">checklist</span> Landing Page Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-wolf/5 border border-wolf/10"><p class="text-xs font-bold text-wolf mb-1">ONE CLEAR CTA</p><p class="text-[10px] text-muted">Every section should push toward ONE action. Don't confuse visitors.</p></div>
+          <div class="p-3 rounded-xl bg-wolf/5 border border-wolf/10"><p class="text-xs font-bold text-wolf mb-1">BENEFITS OVER FEATURES</p><p class="text-[10px] text-muted">"Converts 4x more visitors" beats "built with React".</p></div>
+          <div class="p-3 rounded-xl bg-wolf/5 border border-wolf/10"><p class="text-xs font-bold text-wolf mb-1">SOCIAL PROOF EARLY</p><p class="text-[10px] text-muted">Testimonials above the fold build trust before they scroll.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: A/B Testing -->
+    <div class="ads-tab hidden reveal" id="ads-abtest">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-purple-400">compare</span> A/B Test Headline Ideas</h3>
+        <p class="text-muted text-sm mb-4">5 variations of every headline. Label: Curiosity / Pain / Benefit / Social Proof / Urgency. Test one variable at a time.</p>
+        <div class="space-y-4">
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-purple-400 font-bold mb-2">TEST: Hero Main Headline</p>
+            <p class="mb-1"><span class="text-purple-400 font-bold">A) Curiosity:</span> "The #1 reason your website isn't converting (it's not what you think)"</p>
+            <p class="mb-1"><span class="text-error font-bold">B) Pain:</span> "Your website is losing you customers right now"</p>
+            <p class="mb-1"><span class="text-tertiary font-bold">C) Benefit:</span> "Get a website that converts 4x more visitors into customers"</p>
+            <p class="mb-1"><span class="text-secondary font-bold">D) Social Proof:</span> "Why 50+ businesses trust Wolf Industries with their websites"</p>
+            <p class="mb-0"><span class="text-[#ff8800] font-bold">E) Urgency:</span> "Your competitors are fixing their websites. Are you?"</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-purple-400 font-bold mb-2">TEST: CTA Button Text</p>
+            <p class="mb-1"><span class="text-purple-400 font-bold">A) Curiosity:</span> "See What's Possible"</p>
+            <p class="mb-1"><span class="text-error font-bold">B) Pain:</span> "Stop Losing Customers"</p>
+            <p class="mb-1"><span class="text-tertiary font-bold">C) Benefit:</span> "Get More Leads Now"</p>
+            <p class="mb-1"><span class="text-secondary font-bold">D) Social Proof:</span> "Join 50+ Happy Clients"</p>
+            <p class="mb-0"><span class="text-[#ff8800] font-bold">E) Urgency:</span> "Start Before Your Competitors Do"</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-purple-400 font-bold mb-2">TEST: Pricing Page Headline</p>
+            <p class="mb-1"><span class="text-purple-400 font-bold">A) Curiosity:</span> "The right website at every budget"</p>
+            <p class="mb-1"><span class="text-error font-bold">B) Pain:</span> "Stop overpaying for websites that don't work"</p>
+            <p class="mb-1"><span class="text-tertiary font-bold">C) Benefit:</span> "Premium quality. Fair prices. Fast delivery."</p>
+            <p class="mb-1"><span class="text-secondary font-bold">D) Social Proof:</span> "Trusted by startups, restaurants, and SaaS companies"</p>
+            <p class="mb-0"><span class="text-[#ff8800] font-bold">E) Urgency:</span> "Only 2 project slots available this month"</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="text-purple-400 material-symbols-outlined text-sm">checklist</span> A/B Testing Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-purple-500/5 border border-purple-400/10"><p class="text-xs font-bold text-purple-400 mb-1">TEST ONE VARIABLE</p><p class="text-[10px] text-muted">Headline OR CTA OR image. Never all at once.</p></div>
+          <div class="p-3 rounded-xl bg-purple-500/5 border border-purple-400/10"><p class="text-xs font-bold text-purple-400 mb-1">100+ CLICKS MINIMUM</p><p class="text-[10px] text-muted">Don't judge results before 100 clicks per variation.</p></div>
+          <div class="p-3 rounded-xl bg-purple-500/5 border border-purple-400/10"><p class="text-xs font-bold text-purple-400 mb-1">WINNER BECOMES CONTROL</p><p class="text-[10px] text-muted">Once you find a winner, test a new challenger against it.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Testimonials -->
+    <div class="ads-tab hidden reveal" id="ads-testimonials">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-[#00d4ff]">format_quote</span> Testimonial Request Templates</h3>
+        <p class="text-muted text-sm mb-4">Short email/message asking happy clients for a review. Give versions for Google, LinkedIn, and direct quote.</p>
+        <div class="space-y-4">
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#00d4ff] font-bold mb-2">TEMPLATE 1: The Direct Ask (Best right after delivery)</p>
+            <p class="mb-1">Subject: Quick favor? </p>
+            <p class="mb-1">Hi [Name],</p>
+            <p class="mb-2">Hope you're happy with the [project]! If you have 2 minutes, would you mind writing a quick review? It helps other businesses find Wolf Industries and means a lot to me as a freelancer.</p>
+            <p class="mb-2">Here's a link to leave a Google review: [link]</p>
+            <p class="mb-2">Or just reply with a sentence or two — I can use it as a testimonial on my site.</p>
+            <p class="mb-2">No pressure at all, but if you're happy, I'd really appreciate it!</p>
+            <p class="mb-0">Thanks,<br/>H. Sadew</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#00d4ff] font-bold mb-2">TEMPLATE 2: The LinkedIn Recommendation</p>
+            <p class="mb-1">Hi [Name], hope you're doing well! I really enjoyed working on [project] together.</p>
+            <p class="mb-2">If you have a moment, would you mind writing me a quick LinkedIn recommendation? It helps me reach more businesses like yours. Here's my profile: [link]</p>
+            <p class="mb-2">You could mention the [specific result — e.g., "fast delivery" or "great communication"]. Whatever feels natural!</p>
+            <p class="mb-0">Thanks so much!<br/>H. Sadew</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#00d4ff] font-bold mb-2">TEMPLATE 3: The Fiverr/Upwork Review</p>
+            <p class="mb-1">Hi [Name], glad you're happy with the final result!</p>
+            <p class="mb-2">If you could leave a quick review on [Fiverr/Upwork], it would really help my profile. Just a sentence or two about your experience is perfect.</p>
+            <p class="mb-2">Here's the link: [link]</p>
+            <p class="mb-0">Thanks for being a great client!<br/>H. Sadew</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-[#00d4ff] text-sm">checklist</span> Testimonial Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-[#00d4ff]/5 border border-[#00d4ff]/10"><p class="text-xs font-bold text-[#00d4ff] mb-1">ASK RIGHT AFTER DELIVERY</p><p class="text-[10px] text-muted">Happiness peaks at delivery. Ask within 24 hours.</p></div>
+          <div class="p-3 rounded-xl bg-[#00d4ff]/5 border border-[#00d4ff]/10"><p class="text-xs font-bold text-[#00d4ff] mb-1">MAKE IT EASY</p><p class="text-[10px] text-muted">Give them a direct link. The fewer clicks, the more reviews.</p></div>
+          <div class="p-3 rounded-xl bg-[#00d4ff]/5 border border-[#00d4ff]/10"><p class="text-xs font-bold text-[#00d4ff] mb-1">SUGGEST WHAT TO SAY</p><p class="text-[10px] text-muted">"You could mention the fast delivery" gives them a starting point.</p></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================ -->
   <!-- SECTION 10: CONTACT -->
   <!-- ============================================ -->
   <section class="px-8 py-12" id="contact">
@@ -2097,6 +2382,18 @@
     });
     btn.classList.remove('bg-white/5', 'text-muted', 'border-white/10');
     btn.classList.add('bg-tertiary/20', 'text-tertiary', 'border-tertiary/30');
+  }
+
+  // Ads tab switching
+  function showAdsTab(tab, btn) {
+    document.querySelectorAll('.ads-tab').forEach(function(el) { el.classList.add('hidden'); });
+    document.getElementById('ads-' + tab).classList.remove('hidden');
+    document.querySelectorAll('#ads button').forEach(function(b) {
+      b.classList.remove('bg-[#EA4335]/20', 'text-[#EA4335]', 'border-[#EA4335]/30');
+      b.classList.add('bg-white/5', 'text-muted', 'border-white/10');
+    });
+    btn.classList.remove('bg-white/5', 'text-muted', 'border-white/10');
+    btn.classList.add('bg-[#EA4335]/20', 'text-[#EA4335]', 'border-[#EA4335]/30');
   }
 
   // Close sidebar on mobile nav click

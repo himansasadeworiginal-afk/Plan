@@ -204,6 +204,12 @@
     <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium" href="#ads">
       <span class="material-symbols-outlined text-lg">ads_click</span> Advertising &amp; Copy
     </a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium" href="#marketing">
+      <span class="material-symbols-outlined text-lg">auto_awesome</span> Content Marketing
+    </a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium" href="#ops">
+      <span class="material-symbols-outlined text-lg">settings</span> Business Operations
+    </a>
   </nav>
   <div class="mt-auto pt-6 border-t border-white/5">
     <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-wolf hover:bg-wolf/10 rounded-xl transition-all mb-2" href="#contact">
@@ -2291,6 +2297,449 @@
   <div class="section-divider"></div>
 
   <!-- ============================================ -->
+  <!-- SECTION: CONTENT MARKETING -->
+  <!-- ============================================ -->
+  <section class="px-4 md:px-8 py-6 md:py-12" id="marketing">
+    <div class="mb-8 reveal">
+      <span class="text-[10px] font-bold tracking-[0.2em] text-[#ff8800] uppercase">Module 05 — AI Business Brain</span>
+      <h2 class="text-3xl font-black tracking-tight mt-2">Content <span class="text-[#ff8800]">Marketing</span></h2>
+      <p class="text-muted text-sm mt-1">Blog posts for SEO, YouTube scripts, and newsletter drafts. Build authority and attract clients organically.</p>
+    </div>
+
+    <div class="flex flex-wrap gap-2 mb-8 reveal">
+      <button class="px-4 py-2 rounded-xl bg-[#ff8800]/20 text-[#ff8800] text-xs font-bold border border-[#ff8800]/30" onclick="showMktTab('blog', this)">Blog Posts (SEO)</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showMktTab('youtube', this)">YouTube Scripts</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showMktTab('newsletter', this)">Newsletters</button>
+    </div>
+
+    <!-- TAB: Blog Posts -->
+    <div class="marketing-tab reveal" id="marketing-blog">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-[#ff8800]">article</span> SEO Blog Post Outlines</h3>
+        <p class="text-muted text-sm mb-4">Each post targets a specific search intent. Structure: Hook → Problem → Solution → Steps → CTA. 1200-1800 words optimal.</p>
+        <div class="space-y-4">
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#ff8800] font-bold mb-2">POST 1: "How Much Does a Website Cost in 2026?" (Target: informational)</p>
+            <p class="mb-1 text-body font-bold"> Intro:</p>
+            <p class="mb-2">"How much should a website actually cost?" It's the #1 question every business owner asks. The answer might surprise you.</p>
+            <p class="mb-1 text-body font-bold"> H2: The Real Cost of a Website (2026 Breakdown)</p>
+            <p class="mb-1"> DIY builders ($0-$50/mo) | Templates ($200-$1K) | Freelancers ($50-$5K) | Agencies ($5K-$50K)</p>
+            <p class="mb-1 text-body font-bold"> H2: What Affects Website Cost?</p>
+            <p class="mb-1"> Pages | Design complexity | Functionality | CMS | SEO | Content creation</p>
+            <p class="mb-1 text-body font-bold"> H2: Hidden Costs Nobody Talks About</p>
+            <p class="mb-1"> Hosting | Domain | Maintenance | Updates | Security | Content updates</p>
+            <p class="mb-1 text-body font-bold"> H2: How to Get the Best Value</p>
+            <p class="mb-2"> Define goals first | Start minimum | Scale later | Choose the right partner</p>
+            <p class="mb-0 text-[#ff8800] font-bold"> CTA: "Need a quote for your project? Message Wolf Industries for a free consultation."</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#ff8800] font-bold mb-2">POST 2: "5 Signs Your Website Is Losing You Customers" (Target: problem-aware)</p>
+            <p class="mb-1 text-body font-bold"> Intro:</p>
+            <p class="mb-2">Your website works. It loads. It looks "fine." But are you losing customers without knowing it?</p>
+            <p class="mb-1 text-body font-bold"> H2: Sign #1 — Your Homepage Takes More Than 3 Seconds to Load</p>
+            <p class="mb-2">53% of visitors leave if a site takes longer than 3 seconds. Test yours at PageSpeed Insights.</p>
+            <p class="mb-1 text-body font-bold"> H2: Sign #2 — No Clear Call-to-Action Above the Fold</p>
+            <p class="mb-2">If a visitor can't tell what you do and what to do next in 5 seconds, they leave.</p>
+            <p class="mb-1 text-body font-bold"> H2: Sign #3 — Your Site Looks Bad on Mobile</p>
+            <p class="mb-2">70% of traffic is mobile. If your site isn't mobile-first, you're losing 7 out of 10 visitors.</p>
+            <p class="mb-1 text-body font-bold"> H2: Sign #4 — You Can't Update It Yourself</p>
+            <p class="mb-2">Waiting a week and paying $200 for a simple text change? That's a problem.</p>
+            <p class="mb-1 text-body font-bold"> H2: Sign #5 — No Social Proof Anywhere</p>
+            <p class="mb-2">No testimonials, no case studies, no trust signals. Visitors won't convert without proof.</p>
+            <p class="mb-0 text-[#ff8800] font-bold"> CTA: "How many of these signs does your site have? Get a free 5-minute audit from Wolf Industries."</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#ff8800] font-bold mb-2">POST 3: "Freelance Web Developer vs Agency: Which Is Right for You?" (Target: commercial)</p>
+            <p class="mb-1 text-body font-bold"> Intro:</p>
+            <p class="mb-2">You need a website. But should you hire a freelancer or an agency? Here's an honest comparison.</p>
+            <p class="mb-1 text-body font-bold"> H2: Cost Comparison</p>
+            <p class="mb-1"> Freelancer: $50-$2,000 | Agency: $5,000-$50,000+ | DIY: $0-$500 (but your time)</p>
+            <p class="mb-1 text-body font-bold"> H2: Speed Comparison</p>
+            <p class="mb-1"> Freelancer: 3-14 days | Agency: 6-12 weeks | DIY: 1-3 months (learning curve)</p>
+            <p class="mb-1 text-body font-bold"> H2: Quality Comparison</p>
+            <p class="mb-2">Both can deliver quality. The difference is communication, flexibility, and price.</p>
+            <p class="mb-1 text-body font-bold"> H2: When to Choose a Freelancer</p>
+            <p class="mb-2"> Budget under $5K | Need it fast | Want direct communication | Simple-mid complexity</p>
+            <p class="mb-1 text-body font-bold"> H2: When to Choose an Agency</p>
+            <p class="mb-2"> Budget $10K+ | Enterprise needs | Multiple departments | Ongoing large-scale work</p>
+            <p class="mb-0 text-[#ff8800] font-bold"> CTA: "Not sure which is right for you? Message Wolf Industries — honest advice, no pressure."</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-[#ff8800] text-sm">checklist</span> Blog SEO Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-[#ff8800]/5 border border-[#ff8800]/10"><p class="text-xs font-bold text-[#ff8800] mb-1">TARGET ONE KEYWORD</p><p class="text-[10px] text-muted">One primary keyword per post. Use it in title, H2s, first 100 words.</p></div>
+          <div class="p-3 rounded-xl bg-[#ff8800]/5 border border-[#ff8800]/10"><p class="text-xs font-bold text-[#ff8800] mb-1">1200-1800 WORDS</p><p class="text-[10px] text-muted">Longer content ranks better. But every word must earn its place.</p></div>
+          <div class="p-3 rounded-xl bg-[#ff8800]/5 border border-[#ff8800]/10"><p class="text-xs font-bold text-[#ff8800] mb-1">INTERNAL LINKS</p><p class="text-[10px] text-muted">Link to 2-3 other posts on your site. Keeps visitors on your domain.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: YouTube Scripts -->
+    <div class="marketing-tab hidden reveal" id="marketing-youtube">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-error">smart_display</span> YouTube Script Ideas</h3>
+        <p class="text-muted text-sm mb-4">8-12 minute videos. Hook in first 5 seconds. Pattern: Hook → Intro → Value → CTA. Build authority and drive traffic.</p>
+        <div class="space-y-4">
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-error font-bold mb-2">VIDEO 1: "I Built a Website in 24 Hours — Here's What Happened"</p>
+            <p class="mb-1 text-body font-bold"> HOOK (0:00-0:05):</p>
+            <p class="mb-2">"I built a full business website in 24 hours. Here's exactly how — and what I'd do differently."</p>
+            <p class="mb-1 text-body font-bold"> INTRO (0:05-0:30):</p>
+            <p class="mb-2">"I'm H. Sadew from Wolf Industries. I challenged myself to build a complete website in 24 hours. Here's the full process."</p>
+            <p class="mb-1 text-body font-bold"> BODY (0:30-8:00):</p>
+            <p class="mb-1"> Hour 1-2: Planning &amp; wireframe</p>
+            <p class="mb-1"> Hour 3-6: Design in Figma</p>
+            <p class="mb-1"> Hour 7-14: Development</p>
+            <p class="mb-1"> Hour 15-20: Content &amp; SEO</p>
+            <p class="mb-2"> Hour 21-24: Testing &amp; launch</p>
+            <p class="mb-1 text-body font-bold"> RESULTS (8:00-9:00):</p>
+            <p class="mb-2"> PageSpeed score, conversion setup, what worked, what didn't</p>
+            <p class="mb-0 text-body font-bold"> CTA (9:00-9:30):</p>
+            <p class="mb-0">"If you want me to build your site, link in the description. Subscribe for more web dev content every week."</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-error font-bold mb-2">VIDEO 2: "5 Website Mistakes That Are Costing You Customers"</p>
+            <p class="mb-1 text-body font-bold"> HOOK:</p>
+            <p class="mb-2">"Your website is losing you customers right now. Here are 5 mistakes I see on almost every small business site."</p>
+            <p class="mb-1 text-body font-bold"> BODY:</p>
+            <p class="mb-1"> Mistake 1: No clear headline (show example)</p>
+            <p class="mb-1"> Mistake 2: Slow load time (live test)</p>
+            <p class="mb-1"> Mistake 3: Broken mobile experience (phone demo)</p>
+            <p class="mb-1"> Mistake 4: No CTA above the fold (redline)</p>
+            <p class="mb-2"> Mistake 5: Zero social proof (show before/after)</p>
+            <p class="mb-0 text-body font-bold"> CTA:</p>
+            <p class="mb-0">"Want me to audit your site? Free 5-minute audit — link in description. Subscribe for weekly web tips."</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-error font-bold mb-2">VIDEO 3: "How I Went From $0 to $5K/Month as a Freelance Web Developer"</p>
+            <p class="mb-1 text-body font-bold"> HOOK:</p>
+            <p class="mb-2">"6 months ago I had zero clients. Today I make $5K/mo as a freelance web developer. Here's the exact playbook."</p>
+            <p class="mb-1 text-body font-bold"> BODY:</p>
+            <p class="mb-1"> Month 1: Built portfolio (what I built, why)</p>
+            <p class="mb-1"> Month 2: Started posting daily (platforms, content types)</p>
+            <p class="mb-1"> Month 3: Cold outreach system (templates, volume, results)</p>
+            <p class="mb-1"> Month 4-6: Raised rates, got referrals, built systems</p>
+            <p class="mb-2"> Key numbers: messages sent, replies, calls, conversions, revenue</p>
+            <p class="mb-0 text-body font-bold"> CTA:</p>
+            <p class="mb-0">"Want the exact templates I use? Free download — link in description. Subscribe for the full freelance series."</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-error text-sm">checklist</span> YouTube Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-error/5 border border-error/10"><p class="text-xs font-bold text-error mb-1">HOOK IN 5 SECONDS</p><p class="text-[10px] text-muted">"I built X and here's what happened" beats "Hey guys welcome back..."</p></div>
+          <div class="p-3 rounded-xl bg-error/5 border border-error/10"><p class="text-xs font-bold text-error mb-1">8-12 MINUTES OPTIMAL</p><p class="text-[10px] text-muted">Long enough for depth, short enough for retention. Algorithm loves it.</p></div>
+          <div class="p-3 rounded-xl bg-error/5 border border-error/10"><p class="text-xs font-bold text-error mb-1">SHOW, DON'T TELL</p><p class="text-[10px] text-muted">Screen recordings, live demos, before/after. Visual proof wins.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Newsletters -->
+    <div class="marketing-tab hidden reveal" id="marketing-newsletter">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-secondary">mail</span> Newsletter Drafts</h3>
+        <p class="text-muted text-sm mb-4">Send monthly. Mix: industry insight + practical tip + personal update + CTA. Build relationships that convert.</p>
+        <div class="space-y-4">
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-secondary font-bold mb-2">NEWSLETTER #1: "The Wolf Industries Monthly — Issue #1"</p>
+            <p class="mb-1 text-body font-bold"> Subject: Your website is leaking customers (here's how to fix it)</p>
+            <p class="mb-2">Hey [First Name], welcome to the first Wolf Industries newsletter. One insight each month to help you get more from your website.</p>
+            <p class="mb-1 text-body font-bold"> THIS MONTH'S INSIGHT:</p>
+            <p class="mb-2">I audited 10 small business websites last week. 7 of them had the same problem: no clear call-to-action above the fold. If visitors can't tell what to do in 5 seconds, they leave. Fix this one thing and watch your leads increase.</p>
+            <p class="mb-1 text-body font-bold"> QUICK TIP:</p>
+            <p class="mb-2">Test your site speed at pagespeed.web.dev. If it's under 80, that's costing you visitors. Most fixes take less than an hour.</p>
+            <p class="mb-1 text-body font-bold"> BEHIND THE SCENES:</p>
+            <p class="mb-2">Just finished a restaurant website — online orders up 34% in 2 weeks. Case study coming next month.</p>
+            <p class="mb-0 text-body font-bold"> CTA:</p>
+            <p class="mb-0">Need a website that actually converts? Reply to this email or visit wolfindustries.dev</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-secondary font-bold mb-2">NEWSLETTER #2: "The Wolf Industries Monthly — Issue #2"</p>
+            <p class="mb-1 text-body font-bold"> Subject: The $50 website vs the $5,000 website</p>
+            <p class="mb-2">Hey [First Name], this month I want to talk about something nobody in web dev wants to say out loud.</p>
+            <p class="mb-1 text-body font-bold"> THIS MONTH'S INSIGHT:</p>
+            <p class="mb-2">A $50 website can outperform a $5,000 one. How? Focus. A single landing page with one clear CTA will always beat a 12-page site with no direction. I've seen it over and over. The best websites aren't the biggest — they're the most focused.</p>
+            <p class="mb-1 text-body font-bold"> QUICK TIP:</p>
+            <p class="mb-2">Before adding a page to your site, ask: "What action should this page drive?" If you can't answer, don't build it.</p>
+            <p class="mb-1 text-body font-bold"> BEHIND THE SCENES:</p>
+            <p class="mb-2">Just hit 1,000 LinkedIn followers. Sharing the exact content strategy that got me here in next week's post.</p>
+            <p class="mb-0 text-body font-bold"> CTA:</p>
+            <p class="mb-0">Want a free website audit? Just reply "audit" and I'll take a look. No pitch. Just honest feedback.</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-sm">checklist</span> Newsletter Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-secondary/5 border border-secondary/10"><p class="text-xs font-bold text-secondary mb-1">SEND MONTHLY</p><p class="text-[10px] text-muted">Once a month minimum. Weekly if you have enough value to share.</p></div>
+          <div class="p-3 rounded-xl bg-secondary/5 border border-secondary/10"><p class="text-xs font-bold text-secondary mb-1">ONE CLEAR INSIGHT</p><p class="text-[10px] text-muted">Don't overwhelm. One idea, well explained, beats five shallow topics.</p></div>
+          <div class="p-3 rounded-xl bg-secondary/5 border border-secondary/10"><p class="text-xs font-bold text-secondary mb-1">PERSONAL TONE</p><p class="text-[10px] text-muted">Write like you talk. "Hey [Name]" not "Dear valued subscriber".</p></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================ -->
+  <!-- SECTION: BUSINESS OPERATIONS -->
+  <!-- ============================================ -->
+  <section class="px-4 md:px-8 py-6 md:py-12" id="ops">
+    <div class="mb-8 reveal">
+      <span class="text-[10px] font-bold tracking-[0.2em] text-purple-400 uppercase">Module 05 — AI Business Brain</span>
+      <h2 class="text-3xl font-black tracking-tight mt-2">Business <span class="text-purple-400">Operations</span></h2>
+      <p class="text-muted text-sm mt-1">Service packages, terms &amp; conditions, NDAs, client onboarding, and project scope documents. Protect your business.</p>
+    </div>
+
+    <div class="flex flex-wrap gap-2 mb-8 reveal">
+      <button class="px-4 py-2 rounded-xl bg-purple-500/20 text-purple-400 text-xs font-bold border border-purple-400/30" onclick="showOpsTab('packages', this)">Service Packages</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showOpsTab('terms', this)">Terms &amp; Conditions</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showOpsTab('nda', this)">NDA Drafts</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showOpsTab('onboarding', this)">Client Onboarding</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showOpsTab('scope', this)">Project Scope</button>
+    </div>
+
+    <!-- TAB: Service Packages -->
+    <div class="ops-tab reveal" id="ops-packages">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-purple-400">inventory_2</span> Service Packages &amp; Pricing Tiers</h3>
+        <p class="text-muted text-sm mb-4">3 tiers always. Name them powerfully. Include what's in, what's out, timeline, revision policy. Make the middle tier the obvious choice.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-5 rounded-xl bg-[#ff8800]/5 border border-[#ff8800]/20">
+            <p class="text-[10px] font-bold tracking-widest text-[#ff8800] mb-2">STARTER — $50</p>
+            <p class="text-xs font-bold text-body mb-2">Single Page / Landing Page</p>
+            <p class="text-[10px] text-muted mb-3">Perfect for: local businesses, event pages, simple portfolios</p>
+            <p class="text-xs font-bold text-body mb-1">What's included:</p>
+            <ul class="text-[10px] text-muted space-y-1 mb-3">
+              <li> 1 responsive page</li>
+              <li> Basic SEO meta tags</li>
+              <li> Contact form integration</li>
+              <li> Mobile-optimized</li>
+              <li> 1 round of revisions</li>
+              <li> 3-day delivery</li>
+            </ul>
+            <p class="text-xs font-bold text-body mb-1">What's NOT included:</p>
+            <ul class="text-[10px] text-muted space-y-1">
+              <li> Copywriting</li>
+              <li> Photography/images</li>
+              <li> CMS integration</li>
+              <li> Ongoing maintenance</li>
+            </ul>
+          </div>
+          <div class="p-5 rounded-xl bg-wolf/5 border-2 border-wolf/30 relative">
+            <span class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-wolf text-surface text-[10px] font-black">MOST POPULAR</span>
+            <p class="text-[10px] font-bold tracking-widest text-wolf mb-2">BUSINESS — $100</p>
+            <p class="text-xs font-bold text-body mb-2">Multi-Page Business Website</p>
+            <p class="text-[10px] text-muted mb-3">Perfect for: small businesses, startups, service providers</p>
+            <p class="text-xs font-bold text-body mb-1">What's included:</p>
+            <ul class="text-[10px] text-muted space-y-1 mb-3">
+              <li> Up to 5 pages</li>
+              <li> Custom UI design</li>
+              <li> CMS integration</li>
+              <li> Motion/animations</li>
+              <li> Performance optimization</li>
+              <li> Analytics setup</li>
+              <li> 2 rounds of revisions</li>
+              <li> 5-day delivery</li>
+              <li> 30-day support</li>
+            </ul>
+            <p class="text-xs font-bold text-body mb-1">What's NOT included:</p>
+            <ul class="text-[10px] text-muted space-y-1">
+              <li> Copywriting</li>
+              <li> Photography/images</li>
+              <li> E-commerce functionality</li>
+              <li> Custom API development</li>
+            </ul>
+          </div>
+          <div class="p-5 rounded-xl bg-purple-500/5 border border-purple-400/20">
+            <p class="text-[10px] font-bold tracking-widest text-purple-400 mb-2">PREMIUM — $200</p>
+            <p class="text-xs font-bold text-body mb-2">Full Web Application</p>
+            <p class="text-[10px] text-muted mb-3">Perfect for: SaaS, e-commerce, complex web apps</p>
+            <p class="text-xs font-bold text-body mb-1">What's included:</p>
+            <ul class="text-[10px] text-muted space-y-1 mb-3">
+              <li> Unlimited pages</li>
+              <li> Premium UI + animations</li>
+              <li> AI chatbot / automation</li>
+              <li> Custom API integration</li>
+              <li> Database + authentication</li>
+              <li> Full SEO setup</li>
+              <li> 3 rounds of revisions</li>
+              <li> 7-day delivery</li>
+              <li> 60-day support</li>
+              <li> Full documentation</li>
+            </ul>
+            <p class="text-xs font-bold text-body mb-1">What's NOT included:</p>
+            <ul class="text-[10px] text-muted space-y-1">
+              <li> Copywriting</li>
+              <li> Photography/images</li>
+              <li> Ongoing maintenance (available as retainer)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-purple-400 text-sm">checklist</span> Pricing Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-purple-500/5 border border-purple-400/10"><p class="text-xs font-bold text-purple-400 mb-1">ALWAYS 3 TIERS</p><p class="text-[10px] text-muted">Anchoring effect. Middle tier should be your most profitable.</p></div>
+          <div class="p-3 rounded-xl bg-purple-500/5 border border-purple-400/10"><p class="text-xs font-bold text-purple-400 mb-1">LIST EXCLUSIONS</p><p class="text-[10px] text-muted">"What's NOT included" prevents scope creep before it starts.</p></div>
+          <div class="p-3 rounded-xl bg-purple-500/5 border border-purple-400/10"><p class="text-xs font-bold text-purple-400 mb-1">DELIVERY TIMELINE</p><p class="text-[10px] text-muted">Always state delivery time. Sets expectations and creates urgency.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Terms & Conditions -->
+    <div class="ops-tab hidden reveal" id="ops-terms">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-primary">gavel</span> Terms &amp; Conditions</h3>
+        <p class="text-muted text-sm mb-4">Plain English, legally protective. Cover: payment, revisions, IP ownership, cancellation, confidentiality. Use for every project.</p>
+        <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+          <p class="text-primary font-bold mb-2">WOLF INDUSTRIES — TERMS AND CONDITIONS</p>
+          <p class="mb-2 text-body font-bold">1. SCOPE OF WORK</p>
+          <p class="mb-2">The scope of work is defined in the project proposal or statement of work agreed upon by both parties. Any work outside this scope requires a separate quote and agreement. Wolf Industries reserves the right to charge additional fees for work requested beyond the agreed scope.</p>
+          <p class="mb-2 text-body font-bold">2. PAYMENT TERMS</p>
+          <p class="mb-2">A 50% deposit is required before work begins. The remaining 50% is due upon project completion, before final files are delivered. Late payments (7+ days overdue) will result in project suspension until payment is received. A late fee of 5% per week may be applied to overdue balances.</p>
+          <p class="mb-2 text-body font-bold">3. REVISIONS</p>
+          <p class="mb-2">Each package includes a specified number of revision rounds (1-3 depending on tier). Additional revisions beyond the included rounds will be billed at $25/hour. Revision requests must be submitted within 7 days of receiving the deliverable. Revisions do not include new features or scope changes.</p>
+          <p class="mb-2 text-body font-bold">4. INTELLECTUAL PROPERTY</p>
+          <p class="mb-2">Upon full payment, all intellectual property rights for the delivered work transfer to the client. Wolf Industries retains the right to display the work in their portfolio, website, and marketing materials. Wolf Industries retains ownership of any pre-existing tools, frameworks, or code libraries used in the project.</p>
+          <p class="mb-2 text-body font-bold">5. CANCELLATION</p>
+          <p class="mb-2">If the client cancels the project after work has begun, the 50% deposit is non-refundable. If the client cancels after project completion, 100% of the project fee is due. Wolf Industries reserves the right to cancel a project with 7 days' notice. In such cases, a pro-rata refund will be issued for work not yet completed.</p>
+          <p class="mb-2 text-body font-bold">6. CONFIDENTIALITY</p>
+          <p class="mb-2">Both parties agree to keep confidential any proprietary information shared during the project. This includes but is not limited to business strategies, customer data, trade secrets, and financial information. This obligation survives the termination of the agreement.</p>
+          <p class="mb-2 text-body font-bold">7. LIABILITY</p>
+          <p class="mb-2">Wolf Industries' liability is limited to the total project fee paid. Wolf Industries is not liable for any indirect, consequential, or incidental damages arising from the use of the delivered work. The client is responsible for ensuring the delivered work complies with applicable laws and regulations.</p>
+          <p class="mb-2 text-body font-bold">8. TIMELINE</p>
+          <p class="mb-2">Delivery timelines are estimates and begin after receiving all necessary content, assets, and the initial deposit. Delays caused by the client (late feedback, missing content) will extend the timeline accordingly. Wolf Industries will communicate any delays on our end promptly.</p>
+          <p class="mb-0 text-body font-bold">9. GOVERNING LAW</p>
+          <p class="mb-0">This agreement is governed by the laws of Sri Lanka. Any disputes will be resolved through mediation before legal action.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: NDA -->
+    <div class="ops-tab hidden reveal" id="ops-nda">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-tertial">shield</span> NDA Drafts</h3>
+        <p class="text-muted text-sm mb-4">Mutual or one-way. Plain English. Cover: what's confidential, duration, exceptions, consequences. Use when sharing sensitive business info.</p>
+        <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+          <p class="text-tertiary font-bold mb-2">MUTUAL NON-DISCLOSURE AGREEMENT</p>
+          <p class="mb-2">This Non-Disclosure Agreement ("Agreement") is entered into between Wolf Industries ("Disclosing Party") and [Client Name] ("Receiving Party") for the purpose of [project description].</p>
+          <p class="mb-2 text-body font-bold">1. DEFINITION OF CONFIDENTIAL INFORMATION</p>
+          <p class="mb-2">Confidential Information includes all information disclosed by either party, whether orally or in writing, that is designated as confidential or that reasonably should be understood to be confidential. This includes: business plans, customer data, financial information, technical specifications, trade secrets, marketing strategies, and any other proprietary information.</p>
+          <p class="mb-2 text-body font-bold">2. OBLIGATIONS</p>
+          <p class="mb-2">The Receiving Party agrees to: (a) hold Confidential Information in strict confidence, (b) not disclose Confidential Information to any third party without written consent, (c) use Confidential Information solely for the purpose of this project, (d) take reasonable measures to protect the confidentiality of such information.</p>
+          <p class="mb-2 text-body font-bold">3. EXCEPTIONS</p>
+          <p class="mb-2">Confidential Information does not include information that: (a) is or becomes publicly available through no fault of the Receiving Party, (b) was known to the Receiving Party prior to disclosure, (c) is independently developed by the Receiving Party without use of Confidential Information, (d) is required to be disclosed by law or court order.</p>
+          <p class="mb-2 text-body font-bold">4. DURATION</p>
+          <p class="mb-2">This Agreement shall remain in effect for a period of [2] years from the date of last disclosure. The obligation to protect Confidential Information survives termination of this Agreement.</p>
+          <p class="mb-2 text-body font-bold">5. CONSEQUENCES OF BREACH</p>
+          <p class="mb-2">Any breach of this Agreement may result in irreparable harm. The Disclosing Party is entitled to seek injunctive relief and monetary damages. The prevailing party in any dispute is entitled to recover reasonable attorney fees.</p>
+          <p class="mb-0 text-body font-bold">6. RETURN OF MATERIALS</p>
+          <p class="mb-0">Upon termination or request, the Receiving Party shall return or destroy all materials containing Confidential Information within 7 days.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Client Onboarding -->
+    <div class="ops-tab hidden reveal" id="ops-onboarding">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-wolf">how_to_reg</span> Client Onboarding Document</h3>
+        <p class="text-muted text-sm mb-4">Welcome message + what they need to send + timeline + communication rules + payment schedule. Send after contract is signed.</p>
+        <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+          <p class="text-wolf font-bold mb-2">WELCOME TO WOLF INDUSTRIES!</p>
+          <p class="mb-2">Hi [Client Name], welcome aboard! I'm excited to work with you on [Project Name]. Here's everything you need to know to get started.</p>
+          <p class="mb-2 text-body font-bold">WHAT HAPPENS NEXT:</p>
+          <p class="mb-1"> 1. Send me the items listed below (within 3 days)</p>
+          <p class="mb-1"> 2. I'll create a wireframe/mockup (within 2 days of receiving everything)</p>
+          <p class="mb-1"> 3. You review and provide feedback (within 2 days)</p>
+          <p class="mb-1"> 4. I develop the site (3-5 days)</p>
+          <p class="mb-1"> 5. Final review and revisions (1-2 days)</p>
+          <p class="mb-2"> 6. Launch!</p>
+          <p class="mb-2 text-body font-bold">WHAT I NEED FROM YOU:</p>
+          <p class="mb-1"> Business name and tagline</p>
+          <p class="mb-1"> Logo files (if available) — PNG, SVG preferred</p>
+          <p class="mb-1"> Brand colors and fonts (if you have them)</p>
+          <p class="mb-1"> Content for each page (text/copy)</p>
+          <p class="mb-1"> Images/photos (high resolution)</p>
+          <p class="mb-1"> Examples of websites you like (2-3)</p>
+          <p class="mb-1"> Login credentials (if applicable — hosting, domain)</p>
+          <p class="mb-2"> Any specific features or functionality needed</p>
+          <p class="mb-2 text-body font-bold">COMMUNICATION RULES:</p>
+          <p class="mb-1"> Primary communication: [Email / Slack / WhatsApp]</p>
+          <p class="mb-1"> Response time: within 24 hours on business days</p>
+          <p class="mb-1"> Feedback: please consolidate all feedback into one document</p>
+          <p class="mb-2"> Revisions: [X] rounds included, additional at $25/hr</p>
+          <p class="mb-2 text-body font-bold">PAYMENT SCHEDULE:</p>
+          <p class="mb-1"> 50% deposit ($[Amount]) — due now to begin work</p>
+          <p class="mb-2"> 50% final ($[Amount]) — due before final files are delivered</p>
+          <p class="mb-0 text-body font-bold">QUESTIONS?</p>
+          <p class="mb-0">Just reply to this email. I'm here to help!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Project Scope -->
+    <div class="ops-tab hidden reveal" id="ops-scope">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-error">description</span> Project Scope Document</h3>
+        <p class="text-muted text-sm mb-4">The #1 document to prevent scope creep. Exact deliverables AND exact exclusions. Both parties sign. No ambiguity.</p>
+        <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+          <p class="text-error font-bold mb-2">PROJECT SCOPE DOCUMENT</p>
+          <p class="mb-1"> Project: [Project Name]</p>
+          <p class="mb-1"> Client: [Client Name / Company]</p>
+          <p class="mb-1"> Date: [Date]</p>
+          <p class="mb-2"> Prepared by: H. Sadew, Wolf Industries</p>
+          <p class="mb-2 text-body font-bold">1. PROJECT OVERVIEW</p>
+          <p class="mb-2">[1-2 sentence description of what we're building and why]</p>
+          <p class="mb-2 text-body font-bold">2. EXACT DELIVERABLES</p>
+          <p class="mb-1"> [Deliverable 1 — e.g., "Homepage with hero, features section, testimonials, footer"]</p>
+          <p class="mb-1"> [Deliverable 2 — e.g., "About page with team bios and company story"]</p>
+          <p class="mb-1"> [Deliverable 3 — e.g., "Contact page with form and Google Maps integration"]</p>
+          <p class="mb-1"> [Deliverable 4 — e.g., "Mobile-responsive design for all pages"]</p>
+          <p class="mb-2"> [Deliverable 5 — e.g., "Basic SEO setup: meta tags, sitemap, robots.txt"]</p>
+          <p class="mb-2 text-body font-bold">3. EXACT EXCLUSIONS (Critical — Read Carefully)</p>
+          <p class="mb-1"> Copywriting or content creation</p>
+          <p class="mb-1"> Photography, videography, or stock images</p>
+          <p class="mb-1"> Logo design or brand identity</p>
+          <p class="mb-1"> E-commerce functionality (unless specified above)</p>
+          <p class="mb-1"> Custom API development (unless specified above)</p>
+          <p class="mb-1"> Ongoing maintenance or updates after delivery</p>
+          <p class="mb-1"> Hosting or domain setup</p>
+          <p class="mb-2"> Third-party integrations not listed in deliverables</p>
+          <p class="mb-2 text-body font-bold">4. TIMELINE &amp; MILESTONES</p>
+          <p class="mb-1"> Kickoff: [Date]</p>
+          <p class="mb-1"> Wireframe/Design: [Date]</p>
+          <p class="mb-1"> Development: [Date]</p>
+          <p class="mb-1"> Review &amp; Revisions: [Date]</p>
+          <p class="mb-2"> Launch: [Date]</p>
+          <p class="mb-2 text-body font-bold">5. REVISION POLICY</p>
+          <p class="mb-2">[X] rounds of revisions included. Additional revisions billed at $25/hour. Revision requests must be submitted within 7 days of receiving deliverable. New features or scope changes require a separate quote.</p>
+          <p class="mb-2 text-body font-bold">6. CHANGE REQUEST PROCESS</p>
+          <p class="mb-2">Any changes to the scope must be submitted in writing. Wolf Industries will provide a quote for the additional work. Work on changes will not begin until the change request is approved and paid for.</p>
+          <p class="mb-2 text-body font-bold">7. SIGN-OFF</p>
+          <p class="mb-1"> Client Signature: _________________ Date: _______</p>
+          <p class="mb-0"> Wolf Industries: _________________ Date: _______</p>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-error text-sm">checklist</span> Scope Document Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-error/5 border border-error/10"><p class="text-xs font-bold text-error mb-1">EXCLUSIONS ARE CRITICAL</p><p class="text-[10px] text-muted">The "what's NOT included" section is your #1 scope creep prevention tool.</p></div>
+          <div class="p-3 rounded-xl bg-error/5 border border-error/10"><p class="text-xs font-bold text-error mb-1">BOTH PARTIES SIGN</p><p class="text-[10px] text-muted">No signature = no protection. Get sign-off before any work begins.</p></div>
+          <div class="p-3 rounded-xl bg-error/5 border border-error/10"><p class="text-xs font-bold text-error mb-1">CHANGE REQUEST PROCESS</p><p class="text-[10px] text-muted">Every change = written request + quote + approval. No exceptions.</p></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================ -->
   <!-- SECTION 10: CONTACT -->
   <!-- ============================================ -->
   <section class="px-8 py-12" id="contact">
@@ -2394,6 +2843,30 @@
     });
     btn.classList.remove('bg-white/5', 'text-muted', 'border-white/10');
     btn.classList.add('bg-[#EA4335]/20', 'text-[#EA4335]', 'border-[#EA4335]/30');
+  }
+
+  // Marketing tab switching
+  function showMktTab(tab, btn) {
+    document.querySelectorAll('.marketing-tab').forEach(function(el) { el.classList.add('hidden'); });
+    document.getElementById('marketing-' + tab).classList.remove('hidden');
+    document.querySelectorAll('#marketing button').forEach(function(b) {
+      b.classList.remove('bg-[#ff8800]/20', 'text-[#ff8800]', 'border-[#ff8800]/30');
+      b.classList.add('bg-white/5', 'text-muted', 'border-white/10');
+    });
+    btn.classList.remove('bg-white/5', 'text-muted', 'border-white/10');
+    btn.classList.add('bg-[#ff8800]/20', 'text-[#ff8800]', 'border-[#ff8800]/30');
+  }
+
+  // Operations tab switching
+  function showOpsTab(tab, btn) {
+    document.querySelectorAll('.ops-tab').forEach(function(el) { el.classList.add('hidden'); });
+    document.getElementById('ops-' + tab).classList.remove('hidden');
+    document.querySelectorAll('#ops button').forEach(function(b) {
+      b.classList.remove('bg-purple-500/20', 'text-purple-400', 'border-purple-400/30');
+      b.classList.add('bg-white/5', 'text-muted', 'border-white/10');
+    });
+    btn.classList.remove('bg-white/5', 'text-muted', 'border-white/10');
+    btn.classList.add('bg-purple-500/20', 'text-purple-400', 'border-purple-400/30');
   }
 
   // Close sidebar on mobile nav click

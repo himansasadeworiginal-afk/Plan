@@ -198,6 +198,9 @@
     <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium" href="#sales">
       <span class="material-symbols-outlined text-lg">campaign</span> Sales &amp; Lead Gen
     </a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium" href="#content">
+      <span class="material-symbols-outlined text-lg">edit_note</span> Social Media &amp; Content
+    </a>
   </nav>
   <div class="mt-auto pt-6 border-t border-white/5">
     <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-wolf hover:bg-wolf/10 rounded-xl transition-all mb-2" href="#contact">
@@ -1719,6 +1722,290 @@
   <div class="section-divider"></div>
 
   <!-- ============================================ -->
+  <!-- SECTION 9: SOCIAL MEDIA & CONTENT -->
+  <!-- ============================================ -->
+  <section class="px-4 md:px-8 py-6 md:py-12" id="content">
+    <div class="mb-8 reveal">
+      <span class="text-[10px] font-bold tracking-[0.2em] text-tertiary uppercase">Module 03 — AI Business Brain</span>
+      <h2 class="text-3xl font-black tracking-tight mt-2">Social Media &amp; <span class="text-tertiary">Content</span></h2>
+      <p class="text-muted text-sm mt-1">LinkedIn posts, Twitter threads, Instagram captions, content calendars, hashtags, and post rewrites. All ready to publish.</p>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="flex flex-wrap gap-2 mb-8 reveal">
+      <button class="px-4 py-2 rounded-xl bg-tertiary/20 text-tertiary text-xs font-bold border border-tertiary/30" onclick="showContentTab('linkedin', this)">LinkedIn Posts</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showContentTab('twitter', this)">Twitter/X</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showContentTab('instagram', this)">Instagram</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showContentTab('calendar', this)">Content Calendar</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showContentTab('hashtags', this)">Hashtags</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showContentTab('rewrite', this)">Post Rewriter</button>
+    </div>
+
+    <!-- TAB: LinkedIn -->
+    <div class="content-tab reveal" id="content-linkedin">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-[#0077b5]">article</span> LinkedIn Post Templates</h3>
+        <p class="text-muted text-sm mb-4">Professional, insightful, story-driven. Hook line → Story/Insight → Lesson → Soft CTA. Max 150 words. Use line breaks, no paragraphs.</p>
+        <div class="space-y-4">
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#0077b5] font-bold mb-2">POST 1: THE LESSON POST (Best for engagement)</p>
+            <p class="mb-1">I rebuilt a client's website last week.</p>
+            <p class="mb-1">Same business. Same offers. Same market.</p>
+            <p class="mb-1">But their conversion rate went from 1.2% to 4.8%.</p>
+            <p class="mb-2">What changed? 3 things:</p>
+            <p class="mb-1">  1. Removed 60% of the text on the homepage</p>
+            <p class="mb-1">  2. Added one clear CTA above the fold</p>
+            <p class="mb-2">  3. Cut page load time from 4.2s to 1.1s</p>
+            <p class="mb-1">The lesson: Your website isn't a brochure. It's a salesperson.</p>
+            <p class="mb-2">Make it fast. Make it clear. Make it convert.</p>
+            <p class="mb-0 text-[#0077b5]">What's the #1 thing killing your website conversions? </p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#0077b5] font-bold mb-2">POST 2: THE STORY POST (Best for building trust)</p>
+            <p class="mb-1">6 months ago, I had zero clients.</p>
+            <p class="mb-1">Today, I have a waiting list.</p>
+            <p class="mb-2">Here's exactly what I did (and what I'd do differently):</p>
+            <p class="mb-1"> Month 1: Built 3 portfolio projects. Posted daily on LinkedIn. Got 0 clients.</p>
+            <p class="mb-1"> Month 2: Started cold outreach. 50 messages/week. Got 2 calls. 0 conversions.</p>
+            <p class="mb-1"> Month 3: Raised my rates. Niched down. Got my first $200 project.</p>
+            <p class="mb-2"> Month 4-6: Delivered. Got referrals. Built momentum.</p>
+            <p class="mb-1">The biggest mistake? Trying to be everything to everyone.</p>
+            <p class="mb-2">The biggest win? Saying no to bad-fit clients.</p>
+            <p class="mb-0 text-[#0077b5]">If you're starting out: niche down, deliver quality, and be patient. It works.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#0077b5] font-bold mb-2">POST 3: THE HOT TAKE (Best for reach)</p>
+            <p class="mb-1">Unpopular opinion:</p>
+            <p class="mb-2">Your $5,000 website is probably worse than a $500 one.</p>
+            <p class="mb-1">Here's why:</p>
+            <p class="mb-1"> Expensive agencies give you: 12 pages nobody visits, stock photos, and a 6-week timeline.</p>
+            <p class="mb-2"> A focused freelancer gives you: 3 high-converting pages, real content, and a 5-day turnaround.</p>
+            <p class="mb-1">The difference? One cares about deliverables. The other cares about results.</p>
+            <p class="mb-2">Stop paying for pages. Start paying for conversions.</p>
+            <p class="mb-0 text-[#0077b5]">Agree or disagree? </p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-[#0077b5] text-sm">checklist</span> LinkedIn Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-[#0077b5]/5 border border-[#0077b5]/10"><p class="text-xs font-bold text-[#0077b5] mb-1">HOOK IN FIRST LINE</p><p class="text-[10px] text-muted">"I rebuilt a client's website" beats "I'm excited to share that..."</p></div>
+          <div class="p-3 rounded-xl bg-[#0077b5]/5 border border-[#0077b5]/10"><p class="text-xs font-bold text-[#0077b5] mb-1">MAX 150 WORDS</p><p class="text-[10px] text-muted">Short posts get 3x more engagement. Use line breaks.</p></div>
+          <div class="p-3 rounded-xl bg-[#0077b5]/5 border border-[#0077b5]/10"><p class="text-xs font-bold text-[#0077b5] mb-1">END WITH A QUESTION</p><p class="text-[10px] text-muted">"What's your experience?" drives comments = more reach.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Instagram -->
+    <div class="content-tab hidden reveal" id="content-instagram">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-[#E1306C]">photo_camera</span> Instagram Caption Templates</h3>
+        <p class="text-muted text-sm mb-4">Visual-first. Caption supports the image. Emoji used sparingly. Hashtags at the end, 5-10 max. Aspirational tone.</p>
+        <div class="space-y-4">
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#E1306C] font-bold mb-2">CAPTION 1: Project Showcase (Before/After)</p>
+            <p class="mb-2">Before: Cluttered. Slow. Converting at 0.8%.<br/>After: Clean. Fast. Converting at 4.2%.</p>
+            <p class="mb-2">Same business. Same offers. Completely different results.</p>
+            <p class="mb-2">The secret wasn't a redesign. It was a rethink.<br/>We removed the noise. Added one clear CTA. And made it load in under 1 second.</p>
+            <p class="mb-2">Your website isn't a portfolio. It's a salesperson.<br/>Make it earn its place.</p>
+            <p class="mb-0 text-[#E1306C]">#WebDesign #WebDevelopment #WebsiteRedesign #ConversionRate #SmallBusinessTips #FreelanceWebDev</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#E1306C] font-bold mb-2">CAPTION 2: Behind the Scenes</p>
+            <p class="mb-2">3 AM. Coffee #4. Still pixel-perfecting the hero section.</p>
+            <p class="mb-2">Client said "make it pop."<br/>I said "watch this."</p>
+            <p class="mb-2">Swipe to see the process →<br/>Wireframe → Design → Development → Launch</p>
+            <p class="mb-2">Every detail matters. Every pixel has a purpose.<br/>That's the Wolf Industries difference.</p>
+            <p class="mb-0 text-[#E1306C]">#BehindTheScenes #WebDesigner #BuildInPublic #FreelanceLife #WebDev #DesignProcess</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#E1306C] font-bold mb-2">CAPTION 3: Carousel Tips Post</p>
+            <p class="mb-2">Slide 1: "5 mistakes killing your website conversions"</p>
+            <p class="mb-1">Slide 2: "1. No clear CTA above the fold"</p>
+            <p class="mb-1">Slide 3: "2. Page load time over 3 seconds"</p>
+            <p class="mb-1">Slide 4: "3. Mobile experience is broken"</p>
+            <p class="mb-1">Slide 5: "4. Headline doesn't explain what you do"</p>
+            <p class="mb-2">Slide 6: "5. No social proof or testimonials"</p>
+            <p class="mb-2">Save this for your next website audit.</p>
+            <p class="mb-0 text-[#E1306C]">#WebsiteTips #WebDesignTips #ConversionOptimization #SmallBusiness #WebDevelopment #MarketingTips</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-[#E1306C] text-sm">checklist</span> Instagram Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-[#E1306C]/5 border border-[#E1306C]/10"><p class="text-xs font-bold text-[#E1306C] mb-1">VISUAL FIRST</p><p class="text-[10px] text-muted">Image stops the scroll. Caption closes the engagement. Lead with stunning visuals.</p></div>
+          <div class="p-3 rounded-xl bg-[#E1306C]/5 border border-[#E1306C]/10"><p class="text-xs font-bold text-[#E1306C] mb-1">HASHTAGS AT THE END</p><p class="text-[10px] text-muted">5-10 relevant hashtags. Never in the caption body. Keep it clean.</p></div>
+          <div class="p-3 rounded-xl bg-[#E1306C]/5 border border-[#E1306C]/10"><p class="text-xs font-bold text-[#E1306C] mb-1">REELS + CAROUSELS</p><p class="text-[10px] text-muted">Reels for reach. Carousels for saves. Alternate between both.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Twitter/X -->
+    <div class="content-tab hidden reveal" id="content-twitter">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-[#00d4ff]">chat</span> Twitter/X Content Templates</h3>
+        <p class="text-muted text-sm mb-4">Sharp, punchy, opinionated. 1-2 sentences per point. Threads for deeper topics. Single tweets for hot takes and tips.</p>
+        <div class="space-y-4">
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#00d4ff] font-bold mb-2">THREAD: "How I built a $0-to-$5K/mo freelance business"</p>
+            <p class="mb-1"> 1/ I started Wolf Industries 6 months ago with $0, no clients, and no network.</p>
+            <p class="mb-1"> 2/ Here's the exact playbook I followed (that anyone can copy):</p>
+            <p class="mb-1"> 3/ Step 1: Build 3 portfolio projects. Not for money. For proof.</p>
+            <p class="mb-1"> 4/ Step 2: Post on LinkedIn daily. Tips, stories, hot takes. No fluff.</p>
+            <p class="mb-1"> 5/ Step 3: Send 50 cold messages/week. Personalized. Problem-first.</p>
+            <p class="mb-1"> 6/ Step 4: Deliver over-promised quality. Every. Single. Time.</p>
+            <p class="mb-1"> 7/ Step 5: Ask for testimonials. Turn clients into referrals.</p>
+            <p class="mb-1"> 8/ The result? Month 1: $0. Month 3: $1.2K. Month 6: $5K.</p>
+            <p class="mb-1"> 9/ The secret? Consistency + quality + saying no to bad clients.</p>
+            <p class="mb-0"> 10/ If you're starting from zero: build proof, post daily, outreach daily. Repeat.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#00d4ff] font-bold mb-2">SINGLE TWEET: Hot Take</p>
+            <p class="mb-0">Most freelancers fail because they wait for clients to find them. Post publicly. Share your work. Build in public. Clients don't hire invisible people.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#00d4ff] font-bold mb-2">SINGLE TWEET: Tip</p>
+            <p class="mb-0">Your website has 3 seconds to convince someone to stay. 3 seconds. If it's slow, cluttered, or confusing — they're gone. Speed isn't a feature. It's the feature.</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-[#00d4ff] text-sm">checklist</span> Twitter/X Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-[#00d4ff]/5 border border-[#00d4ff]/10"><p class="text-xs font-bold text-[#00d4ff] mb-1">1-2 SENTENCES PER POINT</p><p class="text-[10px] text-muted">Punchy beats verbose. Every word must earn its place.</p></div>
+          <div class="p-3 rounded-xl bg-[#00d4ff]/5 border border-[#00d4ff]/10"><p class="text-xs font-bold text-[#00d4ff] mb-1">OPINIONATE</p><p class="text-[10px] text-muted">"I think X is overrated" gets more engagement than "X is interesting".</p></div>
+          <div class="p-3 rounded-xl bg-[#00d4ff]/5 border border-[#00d4ff]/10"><p class="text-xs font-bold text-[#00d4ff] mb-1">POST 2-3 TIMES DAILY</p><p class="text-[10px] text-muted">Volume + consistency = growth. Schedule tweets in advance.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Content Calendar -->
+    <div class="content-tab hidden reveal" id="content-calendar">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-wolf">calendar_month</span> Weekly Content Calendar</h3>
+        <p class="text-muted text-sm mb-4">3 LinkedIn + 5 Twitter + 3 Instagram per week. Mix: Project showcase / Tip / Personal story / Industry opinion / Brand.</p>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs">
+            <thead><tr class="border-b border-white/10"><th class="py-3 px-4 text-[10px] font-bold text-muted uppercase">Day</th><th class="py-3 px-4 text-[10px] font-bold text-muted uppercase">LinkedIn</th><th class="py-3 px-4 text-[10px] font-bold text-muted uppercase">Twitter/X</th><th class="py-3 px-4 text-[10px] font-bold text-muted uppercase">Instagram</th></tr></thead>
+            <tbody class="text-muted">
+              <tr class="border-b border-white/5"><td class="py-3 px-4 font-bold text-body">Mon</td><td class="py-3 px-4">Tip post</td><td class="py-3 px-4">Hot take + tip + engage</td><td class="py-3 px-4">—</td></tr>
+              <tr class="border-b border-white/5"><td class="py-3 px-4 font-bold text-body">Tue</td><td class="py-3 px-4">Personal story</td><td class="py-3 px-4">Thread + tip + engage</td><td class="py-3 px-4">Carousel (tips)</td></tr>
+              <tr class="border-b border-white/5"><td class="py-3 px-4 font-bold text-body">Wed</td><td class="py-3 px-4">Industry opinion</td><td class="py-3 px-4">Hot take + engage</td><td class="py-3 px-4">—</td></tr>
+              <tr class="border-b border-white/5"><td class="py-3 px-4 font-bold text-body">Thu</td><td class="py-3 px-4">Project showcase</td><td class="py-3 px-4">Thread + tip + engage</td><td class="py-3 px-4">Project showcase</td></tr>
+              <tr class="border-b border-white/5"><td class="py-3 px-4 font-bold text-body">Fri</td><td class="py-3 px-4">Behind the scenes</td><td class="py-3 px-4">Hot take + engage</td><td class="py-3 px-4">—</td></tr>
+              <tr class="border-b border-white/5"><td class="py-3 px-4 font-bold text-body">Sat</td><td class="py-3 px-4">Lesson learned</td><td class="py-3 px-4">Tip + engage</td><td class="py-3 px-4">BTS or Reel</td></tr>
+              <tr><td class="py-3 px-4 font-bold text-body">Sun</td><td class="py-3 px-4">Engage on others</td><td class="py-3 px-4">Engage only</td><td class="py-3 px-4">—</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-wolf text-sm">checklist</span> Content Mix Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+          <div class="p-3 rounded-xl bg-wolf/5 border border-wolf/10"><p class="text-xs font-bold text-wolf mb-1">40% VALUE</p><p class="text-[10px] text-muted">Tips, tutorials, insights. Content that helps for free.</p></div>
+          <div class="p-3 rounded-xl bg-wolf/5 border border-wolf/10"><p class="text-xs font-bold text-wolf mb-1">30% PROOF</p><p class="text-[10px] text-muted">Case studies, portfolio, testimonials.</p></div>
+          <div class="p-3 rounded-xl bg-wolf/5 border border-wolf/10"><p class="text-xs font-bold text-wolf mb-1">20% PERSONAL</p><p class="text-[10px] text-muted">Journey, stories, behind the scenes.</p></div>
+          <div class="p-3 rounded-xl bg-wolf/5 border border-wolf/10"><p class="text-xs font-bold text-wolf mb-1">10% OPINION</p><p class="text-[10px] text-muted">Hot takes, industry opinions.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Hashtag Research -->
+    <div class="content-tab hidden reveal" id="content-hashtags">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-secondary">tag</span> Hashtag Research — 2026</h3>
+        <p class="text-muted text-sm mb-4">Platform-specific hashtags that work for freelance web development. Mix high-volume + niche.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <p class="text-[10px] font-bold tracking-widest text-[#0077b5] mb-2">LINKEDIN (3-5 per post)</p>
+            <div class="flex flex-wrap gap-1 mb-4">
+              <span class="px-2 py-1 rounded-full bg-[#0077b5]/10 text-[#0077b5] text-[10px] font-bold">#WebDevelopment</span>
+              <span class="px-2 py-1 rounded-full bg-[#0077b5]/10 text-[#0077b5] text-[10px] font-bold">#WebDesign</span>
+              <span class="px-2 py-1 rounded-full bg-[#0077b5]/10 text-[#0077b5] text-[10px] font-bold">#FreelanceDeveloper</span>
+              <span class="px-2 py-1 rounded-full bg-[#0077b5]/10 text-[#0077b5] text-[10px] font-bold">#SmallBusiness</span>
+              <span class="px-2 py-1 rounded-full bg-[#0077b5]/10 text-[#0077b5] text-[10px] font-bold">#Startup</span>
+              <span class="px-2 py-1 rounded-full bg-[#0077b5]/10 text-[#0077b5] text-[10px] font-bold">#BuildInPublic</span>
+            </div>
+            <p class="text-[10px] font-bold tracking-widest text-[#00d4ff] mb-2">TWITTER / X (1-2 per tweet)</p>
+            <div class="flex flex-wrap gap-1 mb-4">
+              <span class="px-2 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-[10px] font-bold">#BuildInPublic</span>
+              <span class="px-2 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-[10px] font-bold">#WebDev</span>
+              <span class="px-2 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-[10px] font-bold">#FreelanceDev</span>
+              <span class="px-2 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-[10px] font-bold">#IndieHacker</span>
+              <span class="px-2 py-1 rounded-full bg-[#00d4ff]/10 text-[#00d4ff] text-[10px] font-bold">#TechTwitter</span>
+            </div>
+            <p class="text-[10px] font-bold tracking-widest text-[#E1306C] mb-2">INSTAGRAM (5-10 per post)</p>
+            <div class="flex flex-wrap gap-1">
+              <span class="px-2 py-1 rounded-full bg-[#E1306C]/10 text-[#E1306C] text-[10px] font-bold">#WebDesigner</span>
+              <span class="px-2 py-1 rounded-full bg-[#E1306C]/10 text-[#E1306C] text-[10px] font-bold">#UIDesign</span>
+              <span class="px-2 py-1 rounded-full bg-[#E1306C]/10 text-[#E1306C] text-[10px] font-bold">#WebDevelopment</span>
+              <span class="px-2 py-1 rounded-full bg-[#E1306C]/10 text-[#E1306C] text-[10px] font-bold">#Freelancer</span>
+              <span class="px-2 py-1 rounded-full bg-[#E1306C]/10 text-[#E1306C] text-[10px] font-bold">#DesignInspo</span>
+            </div>
+          </div>
+          <div>
+            <p class="text-[10px] font-bold tracking-widest text-wolf mb-2">NICHE HASHTAGS (Lower competition)</p>
+            <div class="flex flex-wrap gap-1 mb-4">
+              <span class="px-2 py-1 rounded-full bg-wolf/10 text-wolf text-[10px] font-bold">#FreelanceWebDeveloper</span>
+              <span class="px-2 py-1 rounded-full bg-wolf/10 text-wolf text-[10px] font-bold">#WebDevFreelancer</span>
+              <span class="px-2 py-1 rounded-full bg-wolf/10 text-wolf text-[10px] font-bold">#IndieMaker</span>
+              <span class="px-2 py-1 rounded-full bg-wolf/10 text-wolf text-[10px] font-bold">#Solopreneur</span>
+              <span class="px-2 py-1 rounded-full bg-wolf/10 text-wolf text-[10px] font-bold">#DigitalNomad</span>
+              <span class="px-2 py-1 rounded-full bg-wolf/10 text-wolf text-[10px] font-bold">#RemoteWork</span>
+            </div>
+            <p class="text-[10px] font-bold tracking-widest text-tertiary mb-2">BRAND HASHTAGS (Use on every post)</p>
+            <div class="flex flex-wrap gap-1">
+              <span class="px-2 py-1 rounded-full bg-tertiary/10 text-tertiary text-[10px] font-bold">#WolfIndustries</span>
+              <span class="px-2 py-1 rounded-full bg-tertiary/10 text-tertiary text-[10px] font-bold">#BuiltByWolf</span>
+              <span class="px-2 py-1 rounded-full bg-tertiary/10 text-tertiary text-[10px] font-bold">#WolfDev</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Post Rewriter -->
+    <div class="content-tab hidden reveal" id="content-rewrite">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-[#ff8800]">auto_fix_high</span> Post Rewriter — Before &amp; After</h3>
+        <p class="text-muted text-sm mb-4">Paste any rough post and get a sharper, more professional version.</p>
+        <div class="space-y-5">
+          <div class="p-4 rounded-xl bg-[#ff8800]/5 border border-[#ff8800]/10">
+            <p class="text-[10px] font-bold text-error mb-2"> BEFORE:</p>
+            <p class="text-xs text-muted italic mb-3">"Hey everyone! I'm so excited to share my latest project! I worked really hard on this website and I think it turned out amazing! Check it out! Link in bio!"</p>
+            <p class="text-[10px] font-bold text-wolf mb-2"> AFTER:</p>
+            <p class="text-xs text-body italic">"Client came me with a website converting at 0.8%. We rebuilt it. Same business. Same offers. New conversion rate: 4.2%. The difference? Less noise. One clear CTA. Under 1-second load time. Your website isn't a brochure. It's a salesperson. #WolfIndustries #WebDesign"</p>
+          </div>
+          <div class="p-4 rounded-xl bg-[#ff8800]/5 border border-[#ff8800]/10">
+            <p class="text-[10px] font-bold text-error mb-2"> BEFORE:</p>
+            <p class="text-xs text-muted italic mb-3">"I'm a web developer with 5 years experience. I can build any website you need. I'm very passionate about coding. Hire me! DM me for rates!"</p>
+            <p class="text-[10px] font-bold text-wolf mb-2"> AFTER:</p>
+            <p class="text-xs text-body italic">"I help small businesses turn website visitors into paying customers. Not with fancy animations. With fast, focused, conversion-optimized sites. Recent result: 1.2% → 4.8% conversion rate. If your website isn't making you money, let's talk. #FreelanceWebDev #SmallBusiness"</p>
+          </div>
+          <div class="p-4 rounded-xl bg-[#ff8800]/5 border border-[#ff8800]/10">
+            <p class="text-[10px] font-bold text-error mb-2"> BEFORE:</p>
+            <p class="text-xs text-muted italic mb-3">"Just finished another project! This one was for a restaurant. They needed a website so I made them one. It has a menu and a contact form. Here's a screenshot!"</p>
+            <p class="text-[10px] font-bold text-wolf mb-2"> AFTER:</p>
+            <p class="text-xs text-body italic">"Restaurant owner said: 'People can't find our menu online.' We built a mobile-first site. Menu loads in 0.8 seconds. Online orders up 34% in 2 weeks. Speed isn't a feature. It's the feature. Swipe to see the before/after. #WebDesign #SmallBusiness"</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-[#ff8800] text-sm">checklist</span> Rewrite Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-[#ff8800]/5 border border-[#ff8800]/10"><p class="text-xs font-bold text-[#ff8800] mb-1">CUT "I'M EXCITED TO SHARE"</p><p class="text-[10px] text-muted">Start with the result, not your feelings.</p></div>
+          <div class="p-3 rounded-xl bg-[#ff8800]/5 border border-[#ff8800]/10"><p class="text-xs font-bold text-[#ff8800] mb-1">USE SPECIFIC NUMBERS</p><p class="text-[10px] text-muted">"4.2% conversion" beats "looks really nice".</p></div>
+          <div class="p-3 rounded-xl bg-[#ff8800]/5 border border-[#ff8800]/10"><p class="text-xs font-bold text-[#ff8800] mb-1">END WITH A QUESTION</p><p class="text-[10px] text-muted">Drives comments = more reach.</p></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================ -->
   <!-- SECTION 10: CONTACT -->
   <!-- ============================================ -->
   <section class="px-8 py-12" id="contact">
@@ -1798,6 +2085,18 @@
     });
     btn.classList.remove('bg-white/5', 'text-muted', 'border-white/10');
     btn.classList.add('bg-primary/20', 'text-primary', 'border-primary/30');
+  }
+
+  // Content tab switching
+  function showContentTab(tab, btn) {
+    document.querySelectorAll('.content-tab').forEach(function(el) { el.classList.add('hidden'); });
+    document.getElementById('content-' + tab).classList.remove('hidden');
+    document.querySelectorAll('#content button').forEach(function(b) {
+      b.classList.remove('bg-tertiary/20', 'text-tertiary', 'border-tertiary/30');
+      b.classList.add('bg-white/5', 'text-muted', 'border-white/10');
+    });
+    btn.classList.remove('bg-white/5', 'text-muted', 'border-white/10');
+    btn.classList.add('bg-tertiary/20', 'text-tertiary', 'border-tertiary/30');
   }
 
   // Close sidebar on mobile nav click

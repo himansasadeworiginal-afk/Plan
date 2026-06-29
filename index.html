@@ -195,6 +195,9 @@
     <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium" href="#comms">
       <span class="material-symbols-outlined text-lg">chat</span> Client Comms
     </a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium" href="#sales">
+      <span class="material-symbols-outlined text-lg">campaign</span> Sales &amp; Lead Gen
+    </a>
   </nav>
   <div class="mt-auto pt-6 border-t border-white/5">
     <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-wolf hover:bg-wolf/10 rounded-xl transition-all mb-2" href="#contact">
@@ -1401,6 +1404,321 @@
   <div class="section-divider"></div>
 
   <!-- ============================================ -->
+  <!-- SECTION 9: SALES & FINDING CLIENTS -->
+  <!-- ============================================ -->
+  <section class="px-4 md:px-8 py-6 md:py-12" id="sales">
+    <div class="mb-8 reveal">
+      <span class="text-[10px] font-bold tracking-[0.2em] text-primary uppercase">Module 02 — AI Business Brain</span>
+      <h2 class="text-3xl font-black tracking-tight mt-2">Sales &amp; <span class="text-primary">Finding Clients</span></h2>
+      <p class="text-muted text-sm mt-1">Cold outreach, gig listings, job responses, call scripts, and follow-up sequences. Ready to use.</p>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="flex flex-wrap gap-2 mb-8 reveal">
+      <button class="px-4 py-2 rounded-xl bg-primary/20 text-primary text-xs font-bold border border-primary/30" onclick="showSalesTab('cold', this)">Cold Outreach</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showSalesTab('gigs', this)">Gig Descriptions</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showSalesTab('jobs', this)">Job Responses</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showSalesTab('scripts', this)">Call Scripts</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showSalesTab('sequences', this)">Follow-Up Sequences</button>
+    </div>
+
+    <!-- TAB: Cold Outreach -->
+    <div class="sales-tab reveal" id="sales-cold">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-primary">connect_without_contact</span> LinkedIn Cold Outreach</h3>
+        <p class="text-muted text-sm mb-4">Hook in first line. Lead with their problem, NOT your skills. Max 5 sentences. CTA for 15-min call.</p>
+        <div class="space-y-4">
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-wolf font-bold mb-2">TEMPLATE 1: The Problem Hook (Best for founders/CEOs)</p>
+            <p class="mb-1">Hi [First Name],</p>
+            <p class="mb-2">Noticed [Company Name] is [specific observation — e.g., "growing fast on product hunt"]. Quick question — is your website converting that traffic the way you want?</p>
+            <p class="mb-2">I help [type of business] turn visitors into paying customers with faster, more interactive websites. Here's a recent example: [brief result].</p>
+            <p class="mb-2">Worth a 15-min call next week? No pitch — just want to share one idea that could help.</p>
+            <p class="mb-0">Best,<br/>H. Sadew<br/>Wolf Industries</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-wolf font-bold mb-2">TEMPLATE 2: The Portfolio Hook (Best when you have relevant work)</p>
+            <p class="mb-1">Hi [First Name],</p>
+            <p class="mb-2">Just finished a site for [similar business type] that increased their leads by [X%]. Saw your current site and spotted 3 quick wins you're missing.</p>
+            <p class="mb-2">One is [specific observation — e.g., "your hero section doesn't have a clear CTA above the fold"].</p>
+            <p class="mb-2">Open to a quick chat? Happy to share the other 2 — no strings attached.</p>
+            <p class="mb-0">H. Sadew<br/>Wolf Industries<br/>[Portfolio link]</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-wolf font-bold mb-2">TEMPLATE 3: The Value-First Hook (Best for busy executives)</p>
+            <p class="mb-1">Hi [First Name],</p>
+            <p class="mb-2">I just wrote a quick guide on [specific topic relevant to their business — e.g., "5 things Sri Lankan restaurants are missing on their websites"]. Thought it might be useful for [Company Name].</p>
+            <p class="mb-2">[Link to guide/LinkedIn article]</p>
+            <p class="mb-2">If you want, I can do a free 5-min audit of your site and point out your #1 opportunity. No obligation.</p>
+            <p class="mb-0">Best,<br/>H. Sadew</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-[#00d4ff]">mail</span> Cold Email Outreach</h3>
+        <p class="text-muted text-sm mb-4">Subject line matters more than body. Max 8 sentences total. Always end with a specific CTA.</p>
+        <div class="space-y-4">
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#00d4ff] font-bold mb-1">SUBJECT: Quick question about [Company Name]'s website</p>
+            <p class="mb-1">Hi [First Name],</p>
+            <p class="mb-2">I was on [Company Name]'s website today and noticed [specific observation]. It's a common issue — most [industry] sites have it.</p>
+            <p class="mb-2">I fixed the same problem for [similar client type] and saw [specific result].</p>
+            <p class="mb-2">I do this full-time — I'm a web developer based in Sri Lanka, and I help [target client type] build websites that actually convert visitors into customers.</p>
+            <p class="mb-2">Would you be open to a quick 15-min call this week? I'd love to share one specific idea for your site.</p>
+            <p class="mb-2">Best regards,<br/>H. Sadew<br/>Wolf Industries<br/>[Portfolio link]</p>
+            <p class="text-[10px] text-muted italic">P.S. — Even if now isn't the right time, happy to connect for the future.</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-[#00d4ff] font-bold mb-1">SUBJECT: [First Name], quick idea for [Company Name]</p>
+            <p class="mb-1">Hi [First Name],</p>
+            <p class="mb-2">I have one idea that could improve [Company Name]'s website conversions by 20-30%.</p>
+            <p class="mb-2">It takes 2 minutes to explain — worth a quick call this week?</p>
+            <p class="mb-2">I'm H. Sadew, a freelance web developer. I recently helped [similar client] go from [before] to [after].</p>
+            <p class="mb-2">Here's my calendar link if Tuesday or Wednesday works: [link]<br/>Or just reply with a time that suits you.</p>
+            <p class="mb-0">Best,<br/>H. Sadew<br/>Wolf Industries</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-wolf text-sm">checklist</span> Cold Outreach Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-wolf/5 border border-wolf/10"><p class="text-xs font-bold text-wolf mb-1">RESEARCH BEFORE SENDING</p><p class="text-[10px] text-muted">Mention something SPECIFIC about their business. Generic = ignored.</p></div>
+          <div class="p-3 rounded-xl bg-wolf/5 border border-wolf/10"><p class="text-xs font-bold text-wolf mb-1">LEAD WITH THEIR PROBLEM</p><p class="text-[10px] text-muted">"Your site is slow" beats "I'm a web developer with 5 years experience".</p></div>
+          <div class="p-3 rounded-xl bg-wolf/5 border border-wolf/10"><p class="text-xs font-bold text-wolf mb-1">CTA = 15-MIN CALL</p><p class="text-[10px] text-muted">Don't ask for "let me know if interested". Ask for a specific time-bound call.</p></div>
+          <div class="p-3 rounded-xl bg-wolf/5 border border-wolf/10"><p class="text-xs font-bold text-wolf mb-1">SEND 20 PER DAY</p><p class="text-[10px] text-muted">Volume matters. 20 personalized messages/day = ~4-8 conversations/week.</p></div>
+          <div class="p-3 rounded-xl bg-wolf/5 border border-wolf/10"><p class="text-xs font-bold text-wolf mb-1">FOLLOW UP TWICE</p><p class="text-[10px] text-muted">80% of replies come from follow-ups. Day 3 and Day 7.</p></div>
+          <div class="p-3 rounded-xl bg-wolf/5 border border-wolf/10"><p class="text-xs font-bold text-wolf mb-1">TRACK EVERYTHING</p><p class="text-[10px] text-muted">Use a simple spreadsheet. Track who, when, reply rate, conversions.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Gig Descriptions -->
+    <div class="sales-tab hidden reveal" id="sales-gigs">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-tertiary">sell</span> Fiverr Gig Description</h3>
+        <p class="text-muted text-sm mb-4">Keyword-rich title. Problem → Solution → Why Wolf Industries → Packages → FAQ. Optimized for search ranking.</p>
+        <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+          <p class="text-tertiary font-bold text-sm mb-2">GIG TITLE: I will design and develop a premium responsive website for your business</p>
+          <p class="text-tertiary font-bold text-sm mb-2">TAGS: web design, web development, responsive website, landing page, website redesign, wordpress, react, website</p>
+          <p class="text-wolf font-bold mb-2">DESCRIPTION:</p>
+          <p class="mb-2">Is your website losing customers?</p>
+          <p class="mb-2">Most business websites look outdated, load slowly, and don't convert visitors into paying customers. That's lost revenue — every single day.</p>
+          <p class="mb-2 text-body font-bold">I'll fix that.</p>
+          <p class="mb-2">I'm H. Sadew, a freelance web developer from Sri Lanka. I build fast, beautiful, conversion-focused websites for small businesses, startups, and entrepreneurs.</p>
+          <p class="mb-2 text-body font-bold">Why choose Wolf Industries?</p>
+          <p class="mb-1">  Premium quality at fair prices</p>
+          <p class="mb-1">  3-7 day delivery (most projects)</p>
+          <p class="mb-1">  Mobile-optimized, SEO-ready, fast-loading</p>
+          <p class="mb-1">  2 revision rounds included</p>
+          <p class="mb-1">  Source files + documentation</p>
+          <p class="mb-1">  30-60 day post-delivery support</p>
+          <p class="mb-2 text-body font-bold">Packages:</p>
+          <p class="mb-1"><span class="text-[#ff8800]">BASIC ($50):</span> 1-page landing page, responsive, contact form</p>
+          <p class="mb-1"><span class="text-wolf font-bold">STANDARD ($100):</span> Up to 5 pages, custom UI, CMS, motion <span class="text-wolf text-[10px]">(MOST POPULAR)</span></p>
+          <p class="mb-2"><span class="text-purple-400">PREMIUM ($200):</span> Unlimited pages, AI integration, custom API, database</p>
+          <p class="mb-2 text-body font-bold">FAQ:</p>
+          <p class="mb-1">Q: Do you work with clients outside Sri Lanka?</p>
+          <p class="mb-1">A: Yes! I work with clients worldwide. All communication is in English.</p>
+          <p class="mb-1">Q: What do you need from me to start?</p>
+          <p class="mb-1">A: Just your business info, branding (if any), and content. I'll handle the rest.</p>
+          <p class="mb-0">Q: Can I see examples?</p>
+          <p class="mb-0">A: Check my portfolio above or message me for more samples.</p>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-[#00d4ff]">work</span> Upwork Gig / Proposal Template</h3>
+        <p class="text-muted text-sm mb-4">Read the post. Mirror their language. Lead with most relevant experience. Attach portfolio reference.</p>
+        <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+          <p class="text-[#00d4ff] font-bold mb-2">PROPOSAL STRUCTURE:</p>
+          <p class="mb-2">Hi [Client Name],</p>
+          <p class="mb-2">I read your job post about [project type] and I'm confident I can deliver exactly what you need. Here's why:</p>
+          <p class="mb-1 text-body font-bold"> Relevant Experience:</p>
+          <p class="mb-2">I recently built a similar [project type] for [client type] that [specific result — e.g., "increased their conversions by 40% in 2 weeks"].</p>
+          <p class="mb-1 text-body font-bold"> My Approach:</p>
+          <p class="mb-2">[Step 1: Discovery] → [Step 2: Design mockup] → [Step 3: Development] → [Step 4: Revisions] → [Step 5: Delivery + support]</p>
+          <p class="mb-1 text-body font-bold"> Timeline &amp; Budget:</p>
+          <p class="mb-2">I can deliver this in [X days] for $[Amount]. This includes [deliverables] and [support period].</p>
+          <p class="mb-2">I've attached a relevant portfolio piece. Happy to discuss further or start immediately.</p>
+          <p class="mb-0">Best,<br/>H. Sadew<br/>Wolf Industries</p>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-tertiary text-sm">tips_and_updates</span> Gig Optimization Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-tertiary/5 border border-tertiary/10"><p class="text-xs font-bold text-tertiary mb-1">TITLE = KEYWORD-RICH</p><p class="text-xs text-muted">"I will design and develop a premium responsive website" — not "I will make you a website".</p></div>
+          <div class="p-4 rounded-xl bg-tertiary/5 border border-tertiary/10"><p class="text-xs font-bold text-tertiary mb-1">FIRST 2 LINES MATTER MOST</p><p class="text-xs text-muted">These show in search results. Lead with the problem you solve.</p></div>
+          <div class="p-4 rounded-xl bg-tertiary/5 border border-tertiary/10"><p class="text-xs font-bold text-tertiary mb-1">3 PACKAGES ALWAYS</p><p class="text-xs text-muted">Basic / Standard / Premium. Most buyers pick Standard. Make it the obvious choice.</p></div>
+          <div class="p-4 rounded-xl bg-tertiary/5 border border-tertiary/10"><p class="text-xs font-bold text-tertiary mb-1">FAQ OBJECTION HANDLING</p><p class="text-xs text-muted">Answer the 3-4 questions buyers always ask. Reduces back-and-forth, increases orders.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Job Responses -->
+    <div class="sales-tab hidden reveal" id="sales-jobs">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-secondary">assignment_turned_in</span> Job Posting Response Templates</h3>
+        <p class="text-muted text-sm mb-4">Read the post carefully. Mirror their language. Lead with the MOST relevant experience. Always attach portfolio reference.</p>
+        <div class="space-y-4">
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-secondary font-bold mb-2">TEMPLATE 1: Short &amp; Direct (Best for simple projects)</p>
+            <p class="mb-1">Hi [Client Name],</p>
+            <p class="mb-2">I can have this done for you in [X days]. I've built [similar project type] before — here's one: [portfolio link].</p>
+            <p class="mb-2">My approach: [1-sentence plan]. Budget: $[Amount].</p>
+            <p class="mb-2">Let me know if you'd like to discuss. I can start immediately.</p>
+            <p class="mb-0">H. Sadew — Wolf Industries</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-secondary font-bold mb-2">TEMPLATE 2: Detailed (Best for complex/larger projects)</p>
+            <p class="mb-1">Hi [Client Name],</p>
+            <p class="mb-2">Your project caught my attention because I just completed something very similar for [client type]. Here's what I delivered: [specific result].</p>
+            <p class="mb-2">For your project, here's how I'd approach it:</p>
+            <p class="mb-1"> Phase 1: [Discovery/Planning] — [X days]</p>
+            <p class="mb-1"> Phase 2: [Design/Development] — [X days]</p>
+            <p class="mb-1"> Phase 3: [Testing/Revisions] — [X days]</p>
+            <p class="mb-2">Total: $[Amount] delivered in [X] days.</p>
+            <p class="mb-2">I've attached a relevant portfolio piece. Happy to hop on a quick call to discuss details.</p>
+            <p class="mb-0">Best,<br/>H. Sadew<br/>Wolf Industries<br/>[Portfolio link]</p>
+          </div>
+          <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+            <p class="text-secondary font-bold mb-2">TEMPLATE 3: The Question Hook (Best when you need more info)</p>
+            <p class="mb-1">Hi [Client Name],</p>
+            <p class="mb-2">Before I send a full proposal, a couple quick questions:</p>
+            <p class="mb-1"> 1. Do you have branding/design ready, or do you need that too?</p>
+            <p class="mb-1"> 2. What's the #1 goal of this project? (leads, sales, awareness?)</p>
+            <p class="mb-1"> 3. What's your ideal launch date?</p>
+            <p class="mb-2">Once I have these, I'll send a detailed quote within 24 hours. I specialize in [relevant skill] and have built [X] similar projects.</p>
+            <p class="mb-0">Best,<br/>H. Sadew</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-sm">checklist</span> Job Response Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-secondary/5 border border-secondary/10"><p class="text-xs font-bold text-secondary mb-1">REPLY IN FIRST 1 HOUR</p><p class="text-[10px] text-muted">Early proposals get 3x more views. Set alerts.</p></div>
+          <div class="p-3 rounded-xl bg-secondary/5 border border-secondary/10"><p class="text-xs font-bold text-secondary mb-1">MIRROR THEIR LANGUAGE</p><p class="text-[10px] text-muted">If they say "landing page", say "landing page" — not "website".</p></div>
+          <div class="p-3 rounded-xl bg-secondary/5 border border-secondary/10"><p class="text-xs font-bold text-secondary mb-1">ATTACH PORTFOLIO</p><p class="text-[10px] text-muted">Always include 1-2 relevant examples. Proof beats promises.</p></div>
+          <div class="p-3 rounded-xl bg-secondary/5 border border-secondary/10"><p class="text-xs font-bold text-secondary mb-1">KEEP IT UNDER 200 WORDS</p><p class="text-[10px] text-muted">Clients skim. Be concise. Save details for the call.</p></div>
+          <div class="p-3 rounded-xl bg-secondary/5 border border-secondary/10"><p class="text-xs font-bold text-secondary mb-1">INCLUDE A QUESTION</p><p class="text-[10px] text-muted">Shows you read the post. Starts a conversation.</p></div>
+          <div class="p-3 rounded-xl bg-secondary/5 border border-secondary/10"><p class="text-xs font-bold text-secondary mb-1">DON'T LOWBALL</p><p class="text-[10px] text-muted">Price at your rate. Cheap clients = cheap problems.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Call Scripts -->
+    <div class="sales-tab hidden reveal" id="sales-scripts">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-[#ff8800]">phone_in_talk</span> Discovery Call Script</h3>
+        <p class="text-muted text-sm mb-4">Opener → Their situation → Their problem → Desired outcome → Present solution → Price → Close. 15 minutes max.</p>
+        <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+          <p class="text-[#ff8800] font-bold mb-2">THE SCRIPT (15 MIN):</p>
+          <p class="mb-2 text-body font-bold"> MIN 0-2: OPENER</p>
+          <p class="mb-1">"Hi [Name], thanks for making time. Before we start — what made you reach out today?"</p>
+          <p class="mb-3"><span class="text-muted italic">[Let them talk. Listen more than you speak.]</span></p>
+          <p class="mb-2 text-body font-bold"> MIN 2-5: THEIR SITUATION</p>
+          <p class="mb-1">"Tell me about your business. Who are your customers?"</p>
+          <p class="mb-1">"What's working well right now?"</p>
+          <p class="mb-3">"What's frustrating you about your current website/presence?"</p>
+          <p class="mb-2 text-body font-bold"> MIN 5-8: THEIR PROBLEM</p>
+          <p class="mb-1">"So if I understand correctly, the main issue is [repeat back their problem]?"</p>
+          <p class="mb-1">"How is this affecting your business? Lost leads? Lost sales?"</p>
+          <p class="mb-3">"What have you tried so far?"</p>
+          <p class="mb-2 text-body font-bold"> MIN 8-10: DESIRED OUTCOME</p>
+          <p class="mb-1">"If we could fix this perfectly, what would that look like for you?"</p>
+          <p class="mb-3">"What does success look like 3 months after we launch?"</p>
+          <p class="mb-2 text-body font-bold"> MIN 10-12: PRESENT SOLUTION</p>
+          <p class="mb-1">"Based on what you've told me, here's what I'd recommend..."</p>
+          <p class="mb-1">[Explain your approach in 2-3 sentences. Use THEIR words from earlier.]</p>
+          <p class="mb-3">"I've done this before for [similar client] and here's what happened: [result]."</p>
+          <p class="mb-2 text-body font-bold"> MIN 12-14: PRICE</p>
+          <p class="mb-1">"For this scope, my investment is $[Amount]. This includes [deliverables] and [support]."</p>
+          <p class="mb-3">"I also offer a [lower tier] option at $[Amount] if you'd like to start smaller."</p>
+          <p class="mb-2 text-body font-bold"> MIN 14-15: CLOSE</p>
+          <p class="mb-1">"Does this sound like what you're looking for?"</p>
+          <p class="mb-1 text-muted italic">[If yes:] "Great — I'll send a proposal by [tomorrow/within 24h]. Sound good?"</p>
+          <p class="mb-0 text-muted italic">[If hesitation:] "What concerns do you have?" → Handle objection → Re-close.</p>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-error">help</span> Objection Handlers</h3>
+        <p class="text-muted text-sm mb-4">The 3 most common objections and exactly how to respond.</p>
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl bg-error/5 border border-error/10">
+            <p class="text-xs font-bold text-error mb-2">OBJECTION 1: "That's too expensive"</p>
+            <p class="text-xs text-muted italic">"I understand budget is important. Let me ask — what's the cost of NOT fixing this? If your current site is losing you [X leads/month], that's $[Y] in lost revenue every month. My fee pays for itself in [timeframe]. We can also start with the $[lower tier] option and scale up."</p>
+          </div>
+          <div class="p-4 rounded-xl bg-error/5 border border-error/10">
+            <p class="text-xs font-bold text-error mb-2">OBJECTION 2: "I need to think about it"</p>
+            <p class="text-xs text-muted italic">"Of course — it's an investment. What specifically do you need to think about? Is it the budget, the scope, or something else? Maybe I can address that now so you have everything you need to decide."</p>
+          </div>
+          <div class="p-4 rounded-xl bg-error/5 border border-error/10">
+            <p class="text-xs font-bold text-error mb-2">OBJECTION 3: "I already have someone / I'll do it myself"</p>
+            <p class="text-xs text-muted italic">"That's great that you have options. Can I ask — are you happy with the results you're getting? If yes, that's awesome. If not, I'd love to at least send you a free audit so you have a benchmark. No obligation."</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-[#ff8800] text-sm">schedule</span> Call Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-[#ff8800]/5 border border-[#ff8800]/10"><p class="text-xs font-bold text-[#ff8800] mb-1">SEND CALENDAR LINK</p><p class="text-[10px] text-muted">"When works for you?" = endless back and forth. Send a link.</p></div>
+          <div class="p-3 rounded-xl bg-[#ff8800]/5 border border-[#ff8800]/10"><p class="text-xs font-bold text-[#ff8800] mb-1">LISTEN 70%, TALK 30%</p><p class="text-[10px] text-muted">Ask questions. Let them talk. You'll sell more by listening.</p></div>
+          <div class="p-3 rounded-xl bg-[#ff8800]/5 border border-[#ff8800]/10"><p class="text-xs font-bold text-[#ff8800] mb-1">ALWAYS SEND PROPOSAL AFTER</p><p class="text-[10px] text-muted">"I'll send a proposal within 24 hours" — then do it. Same day is best.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Follow-Up Sequences -->
+    <div class="sales-tab hidden reveal" id="sales-sequences">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-purple-400">follow_the_signs</span> Post-Proposal Follow-Up Sequence</h3>
+        <p class="text-muted text-sm mb-4">Sent a proposal and got silence? This 4-message sequence converts 30-40% of "ghosted" proposals.</p>
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl bg-purple-500/5 border border-purple-400/10">
+            <div class="flex items-center gap-2 mb-2"><span class="px-2 py-0.5 rounded-full bg-purple-400/20 text-purple-400 text-[10px] font-bold">MESSAGE 1 — DAY 1</span><span class="text-[10px] font-bold tracking-widest text-purple-400">THE SEND</span></div>
+            <p class="text-xs text-muted italic">"Hi [Name], just sent over the proposal for [project]. Let me know if you have any questions — happy to jump on a quick call to discuss. I can start as soon as [date]. Best, H. Sadew"</p>
+          </div>
+          <div class="p-4 rounded-xl bg-purple-500/5 border border-purple-400/10">
+            <div class="flex items-center gap-2 mb-2"><span class="px-2 py-0.5 rounded-full bg-purple-400/20 text-purple-400 text-[10px] font-bold">MESSAGE 2 — DAY 3</span><span class="text-[10px] font-bold tracking-widest text-purple-400">THE VALUE ADD</span></div>
+            <p class="text-xs text-muted italic">"Hi [Name], wanted to follow up on the proposal. I also put together a quick [tip/idea/screenshot] that might help with [their problem] — [link or attachment]. Let me know if you'd like to move forward! Best, H. Sadew"</p>
+          </div>
+          <div class="p-4 rounded-xl bg-purple-500/5 border border-purple-400/10">
+            <div class="flex items-center gap-2 mb-2"><span class="px-2 py-0.5 rounded-full bg-purple-400/20 text-purple-400 text-[10px] font-bold">MESSAGE 3 — DAY 7</span><span class="text-[10px] font-bold tracking-widest text-purple-400">THE CHECK-IN</span></div>
+            <p class="text-xs text-muted italic">"Hi [Name], I know things get busy. Just checking if you're still interested in moving forward with [project]. If the timing isn't right, no worries at all — just let me know so I can plan accordingly. Best, H. Sadew"</p>
+          </div>
+          <div class="p-4 rounded-xl bg-purple-500/5 border border-purple-400/10">
+            <div class="flex items-center gap-2 mb-2"><span class="px-2 py-0.5 rounded-full bg-purple-400/20 text-purple-400 text-[10px] font-bold">MESSAGE 4 — DAY 14</span><span class="text-[10px] font-bold tracking-widest text-purple-400">THE BREAKUP</span></div>
+            <p class="text-xs text-muted italic">"Hi [Name], I haven't heard back so I'm assuming the timing isn't right. I'll close your file for now, but if you want to revisit this in the future, just reach out. I'd love to work together when the time is right. Best of luck with [their business goal]! H. Sadew"</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-wolf">replay</span> Post-Call Follow-Up (After Discovery Call)</h3>
+        <p class="text-muted text-sm mb-4">Send within 2 hours of the call. Strike while it's fresh.</p>
+        <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+          <p class="text-wolf font-bold mb-2">SUBJECT: [Project Name] — Proposal + Next Steps</p>
+          <p class="mb-1">Hi [Name],</p>
+          <p class="mb-2">Great speaking with you today! As discussed, here's the proposal for [project]:</p>
+          <p class="mb-1 text-body font-bold"> Scope: [Brief summary of what you'll deliver]</p>
+          <p class="mb-1 text-body font-bold"> Investment: $[Amount]</p>
+          <p class="mb-1 text-body font-bold"> Timeline: [X days/weeks]</p>
+          <p class="mb-1 text-body font-bold"> Next step: [50% deposit to start / contract sign]</p>
+          <p class="mb-2">I've attached the full proposal and contract. Let me know if you have any questions — otherwise, I can start on [date].</p>
+          <p class="mb-0">Looking forward to working together!<br/>H. Sadew<br/>Wolf Industries</p>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-purple-400 text-sm">psychology</span> Follow-Up Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-purple-500/5 border border-purple-400/10"><p class="text-xs font-bold text-purple-400 mb-1">4 MESSAGES MAX</p><p class="text-[10px] text-muted">After 4 messages with no reply, move on. Don't be annoying.</p></div>
+          <div class="p-3 rounded-xl bg-purple-500/5 border border-purple-400/10"><p class="text-xs font-bold text-purple-400 mb-1">ADD VALUE EVERY TIME</p><p class="text-[10px] text-muted">Tip, resource, idea — never just "following up". Give them something.</p></div>
+          <div class="p-3 rounded-xl bg-purple-500/5 border border-purple-400/10"><p class="text-xs font-bold text-purple-400 mb-1">THE BREAKUP WORKS</p><p class="text-[10px] text-muted">"I'll close your file" triggers FOMO. 10-15% reply to this one.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================ -->
   <!-- SECTION 10: CONTACT -->
   <!-- ============================================ -->
   <section class="px-8 py-12" id="contact">
@@ -1468,6 +1786,18 @@
     });
     btn.classList.remove('bg-white/5', 'text-muted', 'border-white/10');
     btn.classList.add('bg-wolf/20', 'text-wolf', 'border-wolf/30');
+  }
+
+  // Sales tab switching
+  function showSalesTab(tab, btn) {
+    document.querySelectorAll('.sales-tab').forEach(function(el) { el.classList.add('hidden'); });
+    document.getElementById('sales-' + tab).classList.remove('hidden');
+    document.querySelectorAll('#sales button').forEach(function(b) {
+      b.classList.remove('bg-primary/20', 'text-primary', 'border-primary/30');
+      b.classList.add('bg-white/5', 'text-muted', 'border-white/10');
+    });
+    btn.classList.remove('bg-white/5', 'text-muted', 'border-white/10');
+    btn.classList.add('bg-primary/20', 'text-primary', 'border-primary/30');
   }
 
   // Close sidebar on mobile nav click

@@ -192,6 +192,9 @@
     <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium" href="#social">
       <span class="material-symbols-outlined text-lg">share</span> Social Media Plan
     </a>
+    <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-hover text-muted hover:text-body transition-all hover:translate-x-1 text-sm font-medium" href="#comms">
+      <span class="material-symbols-outlined text-lg">chat</span> Client Comms
+    </a>
   </nav>
   <div class="mt-auto pt-6 border-t border-white/5">
     <a class="flex items-center gap-3 px-4 py-3 text-sm font-medium text-wolf hover:bg-wolf/10 rounded-xl transition-all mb-2" href="#contact">
@@ -1133,7 +1136,272 @@
   <div class="section-divider"></div>
 
   <!-- ============================================ -->
-  <!-- SECTION 9: CONTACT -->
+  <!-- SECTION 9: CLIENT COMMUNICATION PLAYBOOK -->
+  <!-- ============================================ -->
+  <section class="px-4 md:px-8 py-6 md:py-12" id="comms">
+    <div class="mb-8 reveal">
+      <span class="text-[10px] font-bold tracking-[0.2em] text-wolf uppercase">Module 01 — AI Business Brain</span>
+      <h2 class="text-3xl font-black tracking-tight mt-2">Client Communication <span class="neon-text">Playbook</span></h2>
+      <p class="text-muted text-sm mt-1">Ready-to-use templates for every client situation. Copy, customize, send.</p>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="flex flex-wrap gap-2 mb-8 reveal">
+      <button class="px-4 py-2 rounded-xl bg-wolf/20 text-wolf text-xs font-bold border border-wolf/30" onclick="showCommsTab('proposals', this)">Proposals &amp; Quotes</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showCommsTab('contracts', this)">Contracts &amp; Invoices</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showCommsTab('emails', this)">Email Replies</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showCommsTab('scope', this)">Scope Creep</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showCommsTab('followup', this)">Follow-Ups</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showCommsTab('updates', this)">Project Updates</button>
+      <button class="px-4 py-2 rounded-xl bg-white/5 text-muted text-xs font-bold border border-white/10 hover:bg-white/10" onclick="showCommsTab('reject', this)">Polite Rejections</button>
+    </div>
+
+    <!-- TAB: Proposals & Quotes -->
+    <div class="comms-tab reveal" id="comms-proposals">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-wolf">description</span> Proposal Template</h3>
+        <p class="text-muted text-sm mb-4">Structure: Problem → Solution → Deliverables → Timeline → Price → CTA</p>
+        <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+          <p class="text-wolf font-bold mb-2">SUBJECT: [Project Name] — Proposal from Wolf Industries</p>
+          <p class="mb-2">Hi [Client Name],</p>
+          <p class="mb-2">Thanks for reaching out about [project type]. Based on what you've described, I understand you need [problem summary].</p>
+          <p class="mb-2 text-body font-bold">Here's what I recommend:</p>
+          <p class="mb-1"><span class="text-tertiary">▸ Problem:</span> [Their specific pain point]</p>
+          <p class="mb-1"><span class="text-tertiary">▸ Solution:</span> [What you'll build and why it solves their problem]</p>
+          <p class="mb-1"><span class="text-tertiary">▸ Deliverables:</span> [Exact list of what they get]</p>
+          <p class="mb-1"><span class="text-tertiary">▸ Timeline:</span> [X days/weeks, with milestones]</p>
+          <p class="mb-4"><span class="text-tertiary">▸ Investment:</span> [Price with 3 tiers below]</p>
+          <p class="mb-2 text-body font-bold">Packages:</p>
+          <p class="mb-1"><span class="text-[#ff8800]">STARTER — $50:</span> 1 page, responsive, contact form, 3-day delivery</p>
+          <p class="mb-1"><span class="text-wolf font-bold">BUSINESS — $100:</span> Up to 5 pages, custom UI, CMS, motion, 5-day delivery <span class="text-wolf text-[10px]">(RECOMMENDED)</span></p>
+          <p class="mb-4"><span class="text-purple-400">PREMIUM — $200:</span> Unlimited pages, AI integration, custom API, 7-day delivery</p>
+          <p class="mb-2">All packages include [revisions included] and [support period].</p>
+          <p class="mb-2">If this looks good, I can start as soon as [date]. Any questions?</p>
+          <p class="mb-0">Best,<br/>H. Sadew<br/>Wolf Industries</p>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-tertiary">tips_and_updates</span> Proposal Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-tertiary/5 border border-tertiary/10"><p class="text-xs font-bold text-tertiary mb-1">ALWAYS INCLUDE 3 TIERS</p><p class="text-xs text-muted">Makes the middle option the obvious choice. Most clients pick Business tier.</p></div>
+          <div class="p-4 rounded-xl bg-tertiary/5 border border-tertiary/10"><p class="text-xs font-bold text-tertiary mb-1">LEAD WITH THEIR PROBLEM</p><p class="text-xs text-muted">Don't start with your skills. Start with what they need fixed.</p></div>
+          <div class="p-4 rounded-xl bg-tertiary/5 border border-tertiary/10"><p class="text-xs font-bold text-tertiary mb-1">BE SPECIFIC ON DELIVERABLES</p><p class="text-xs text-muted">"5 pages" not "a website". Exact scope prevents scope creep later.</p></div>
+          <div class="p-4 rounded-xl bg-tertiary/5 border border-tertiary/10"><p class="text-xs font-bold text-tertiary mb-1">CLEAR CALL TO ACTION</p><p class="text-xs text-muted">End with a specific next step. "Reply to start" not "let me know".</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Contracts & Invoices -->
+    <div class="comms-tab hidden reveal" id="comms-contracts">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-primary">gavel</span> Contract Essentials</h3>
+        <p class="text-muted text-sm mb-4">Every contract must include these 5 clauses to protect your time and money.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-primary/5 border border-primary/10">
+            <p class="text-xs font-bold text-primary mb-2">1. SCOPE (Exact Deliverables)</p>
+            <p class="text-xs text-muted">"Deliverables: [exact list]. Any work outside this scope requires a separate quote and will be billed at $XX/hr."</p>
+          </div>
+          <div class="p-4 rounded-xl bg-primary/5 border border-primary/10">
+            <p class="text-xs font-bold text-primary mb-2">2. REVISIONS (Max 2 Rounds)</p>
+            <p class="text-xs text-muted">"Price includes 2 rounds of revisions. Additional revisions billed at $XX/hr. Revision requests must be submitted within 7 days of delivery."</p>
+          </div>
+          <div class="p-4 rounded-xl bg-primary/5 border border-primary/10">
+            <p class="text-xs font-bold text-primary mb-2">3. PAYMENT (50% Upfront)</p>
+            <p class="text-xs text-muted">"50% deposit required before work begins. Remaining 50% due before final files are delivered. Late payments: project paused after 7 days."</p>
+          </div>
+          <div class="p-4 rounded-xl bg-primary/5 border border-primary/10">
+            <p class="text-xs font-bold text-primary mb-2">4. KILL FEE (Cancellation)</p>
+            <p class="text-xs text-muted">"If client cancels after work begins, deposit is non-refundable. If client cancels after completion, 100% is due."</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-primary">receipt</span> Invoice Template</h3>
+        <p class="text-muted text-sm mb-4">Clean, professional, itemized. Send as PDF.</p>
+        <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+          <p class="text-wolf font-bold text-base mb-1">INVOICE #[NUMBER]</p>
+          <p class="mb-1">Wolf Industries — H. Sadew</p>
+          <p class="mb-3">Colombo, Sri Lanka</p>
+          <p class="mb-1"><span class="text-body">Bill To:</span> [Client Name / Company]</p>
+          <p class="mb-1"><span class="text-body">Date:</span> [Date]</p>
+          <p class="mb-3"><span class="text-body">Due:</span> [Date + 7 days]</p>
+          <div class="border-t border-white/10 pt-3 mb-3">
+            <p class="mb-1"><span class="text-body">[Service Description]</span> .......... $[Amount]</p>
+            <p class="mb-1"><span class="text-body">[Additional item if any]</span> .......... $[Amount]</p>
+          </div>
+          <div class="border-t border-white/10 pt-3 mb-3">
+            <p class="font-bold text-body">TOTAL DUE: $[Amount]</p>
+            <p class="text-[10px]">50% due now ($[Amount]), 50% on delivery ($[Amount])</p>
+          </div>
+          <p class="mb-1"><span class="text-body">Payment:</span> [PayPal / Wise / Bank Transfer details]</p>
+          <p class="text-[10px] text-muted mt-2">Late fee: 5% per week after due date. Questions? Reply to this email.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Email Replies -->
+    <div class="comms-tab hidden reveal" id="comms-emails">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-[#00d4ff]">mail</span> Professional Email Reply Templates</h3>
+        <p class="text-muted text-sm mb-4">Match the client's tone. Keep under 150 words. Always end with a clear next step.</p>
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+            <p class="text-[10px] font-bold tracking-widest text-[#00d4ff] mb-2">REPLY: Initial Inquiry</p>
+            <p class="text-xs text-muted italic">"Hi [Name], thanks for reaching out! I'd love to help with [project]. To send you an accurate quote, could you share: (1) What's the main goal of the site? (2) Do you have branding/content ready? (3) What's your timeline? Once I have these, I'll send a proposal within 24 hours. Best, H. Sadew"</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+            <p class="text-[10px] font-bold tracking-widest text-[#00d4ff] mb-2">REPLY: Asking for More Info</p>
+            <p class="text-xs text-muted italic">"Hi [Name], thanks for the details! To make sure I get this right, a few quick questions: [question 1]? [question 2]? Happy to jump on a 10-min call if that's easier. Best, H. Sadew"</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+            <p class="text-[10px] font-bold tracking-widest text-[#00d4ff] mb-2">REPLY: Price Negotiation</p>
+            <p class="text-xs text-muted italic">"Hi [Name], I understand budget is a consideration. The $[Amount] reflects [specific value/quality/speed]. If we need to adjust the budget, we could [reduce scope option] or [payment plan option]. What works best for you? Best, H. Sadew"</p>
+          </div>
+          <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+            <p class="text-[10px] font-bold tracking-widest text-[#00d4ff] mb-2">REPLY: Client Goes Silent</p>
+            <p class="text-xs text-muted italic">"Hi [Name], just checking in on the [project] proposal. No pressure — just want to make sure you got it. If the timing isn't right, no worries at all. Let me know either way. Best, H. Sadew"</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-[#00d4ff] text-sm">checklist</span> Email Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-[#00d4ff]/5 border border-[#00d4ff]/10"><p class="text-xs font-bold text-[#00d4ff] mb-1">REPLY WITHIN 24H</p><p class="text-[10px] text-muted">Fast replies win clients. Even if just to acknowledge.</p></div>
+          <div class="p-3 rounded-xl bg-[#00d4ff]/5 border border-[#00d4ff]/10"><p class="text-xs font-bold text-[#00d4ff] mb-1">UNDER 150 WORDS</p><p class="text-[10px] text-muted">Short emails get read. Long emails get ignored.</p></div>
+          <div class="p-3 rounded-xl bg-[#00d4ff]/5 border border-[#00d4ff]/10"><p class="text-xs font-bold text-[#00d4ff] mb-1">ALWAYS END WITH CTA</p><p class="text-[10px] text-muted">"Let me know by Friday" beats "let me know".</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Scope Creep -->
+    <div class="comms-tab hidden reveal" id="comms-scope">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-error">warning</span> Handling Scope Creep</h3>
+        <p class="text-muted text-sm mb-4">Firm but professional. Always redirect to the signed contract. Offer paid solutions.</p>
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl bg-error/5 border border-error/10">
+            <p class="text-[10px] font-bold tracking-widest text-error mb-2">RESPONSE: Small Addition Request</p>
+            <p class="text-xs text-muted italic">"Hi [Name], that's a great idea! That feature falls outside our agreed scope (per Section 1 of the contract). I can add it for $[Amount] with a [X day] delivery, or we can include it in a Phase 2. What would you prefer? Best, H. Sadew"</p>
+          </div>
+          <div class="p-4 rounded-xl bg-error/5 border border-error/10">
+            <p class="text-[10px] font-bold tracking-widest text-error mb-2">RESPONSE: "Just One More Thing"</p>
+            <p class="text-xs text-muted italic">"Hi [Name], I totally understand wanting to get this right. Per our agreement, we've completed [X deliverables]. Additional changes beyond the 2 included revision rounds are billed at $[Amount]/hr. I'm happy to do this — should I send a quick add-on invoice? Best, H. Sadew"</p>
+          </div>
+          <div class="p-4 rounded-xl bg-error/5 border border-error/10">
+            <p class="text-[10px] font-bold tracking-widest text-error mb-2">RESPONSE: Client Wants Everything for Free</p>
+            <p class="text-xs text-muted italic">"Hi [Name], I appreciate your enthusiasm for the project. To be transparent, the current request would add approximately [X hours] of work beyond our agreed scope. I want to deliver quality, so I have two options: (1) We stick to the original scope and deliver on time, or (2) We expand the scope with an adjusted timeline and budget. Which works best? Best, H. Sadew"</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-error text-sm">shield</span> Scope Creep Prevention</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-error/5 border border-error/10"><p class="text-xs font-bold text-error mb-1">ALWAYS HAVE A SIGNED CONTRACT</p><p class="text-xs text-muted">Verbal agreements don't protect you. Contract first, then work.</p></div>
+          <div class="p-4 rounded-xl bg-error/5 border border-error/10"><p class="text-xs font-bold text-error mb-1">LIST EXCLUSIONS EXPLICITLY</p><p class="text-xs text-muted">"Not included: copywriting, photography, hosting setup, ongoing maintenance."</p></div>
+          <div class="p-4 rounded-xl bg-error/5 border border-error/10"><p class="text-xs font-bold text-error mb-1">DOCUMENT EVERY CHANGE REQUEST</p><p class="text-xs text-muted">Email confirmation for every out-of-scope request. Creates paper trail.</p></div>
+          <div class="p-4 rounded-xl bg-error/5 border border-error/10"><p class="text-xs font-bold text-error mb-1">NEVER SAY "YES" IMMEDIATELY</p><p class="text-xs text-muted">"Let me check the scope and get back to you" buys time to quote properly.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Follow-Ups -->
+    <div class="comms-tab hidden reveal" id="comms-followup">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-secondary">schedule</span> 3-Message Follow-Up Sequence</h3>
+        <p class="text-muted text-sm mb-4">No response? Send these in order. Never sound desperate.</p>
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl bg-secondary/5 border border-secondary/10">
+            <div class="flex items-center gap-2 mb-2"><span class="px-2 py-0.5 rounded-full bg-secondary/20 text-secondary text-[10px] font-bold">DAY 1</span><span class="text-[10px] font-bold tracking-widest text-secondary">FRIENDLY</span></div>
+            <p class="text-xs text-muted italic">"Hi [Name], just sent over the proposal for [project]. Let me know if you have any questions — happy to jump on a quick call to discuss. Best, H. Sadew"</p>
+          </div>
+          <div class="p-4 rounded-xl bg-secondary/5 border border-secondary/10">
+            <div class="flex items-center gap-2 mb-2"><span class="px-2 py-0.5 rounded-full bg-secondary/20 text-secondary text-[10px] font-bold">DAY 3</span><span class="text-[10px] font-bold tracking-widest text-secondary">VALUE REMINDER</span></div>
+            <p class="text-xs text-muted italic">"Hi [Name], wanted to follow up on the proposal. I also put together a quick [tip/idea/resource] that might help with [their problem] — [link]. Let me know if you'd like to move forward! Best, H. Sadew"</p>
+          </div>
+          <div class="p-4 rounded-xl bg-secondary/5 border border-secondary/10">
+            <div class="flex items-center gap-2 mb-2"><span class="px-2 py-0.5 rounded-full bg-secondary/20 text-secondary text-[10px] font-bold">DAY 7</span><span class="text-[10px] font-bold tracking-widest text-secondary">FINAL</span></div>
+            <p class="text-xs text-muted italic">"Hi [Name], I know things get busy. I'm wrapping up [date] and wanted to check if you're still interested in moving forward. If the timing isn't right, no worries at all — just let me know so I can plan accordingly. Best, H. Sadew"</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-sm">psychology</span> Follow-Up Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-xl bg-secondary/5 border border-secondary/10"><p class="text-xs font-bold text-secondary mb-1">NEVER SOUND DESPERATE</p><p class="text-[10px] text-muted">"No pressure" and "no worries" are your best friends.</p></div>
+          <div class="p-3 rounded-xl bg-secondary/5 border border-secondary/10"><p class="text-xs font-bold text-secondary mb-1">ADD VALUE IN MESSAGE 2</p><p class="text-[10px] text-muted">Share a tip or resource. Shows you're helpful, not just chasing.</p></div>
+          <div class="p-3 rounded-xl bg-secondary/5 border border-secondary/10"><p class="text-xs font-bold text-secondary mb-1">KNOW WHEN TO STOP</p><p class="text-[10px] text-muted">3 messages max. After that, they'll respond if interested.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Project Updates -->
+    <div class="comms-tab hidden reveal" id="comms-updates">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-[#ff8800]">update</span> Project Update Template</h3>
+        <p class="text-muted text-sm mb-4">Format: Done → In Progress → Next → Blockers. Keep short and confident.</p>
+        <div class="p-5 rounded-xl bg-white/5 border border-white/5 font-mono text-xs leading-relaxed text-muted">
+          <p class="text-[#ff8800] font-bold mb-2">SUBJECT: [Project Name] — Week [X] Update</p>
+          <p class="mb-2">Hi [Client Name],</p>
+          <p class="mb-3">Quick update on [Project Name]:</p>
+          <p class="mb-1"><span class="text-tertiary font-bold"> DONE:</span></p>
+          <p class="mb-1 ml-4">[Completed task 1]</p>
+          <p class="mb-3 ml-4">[Completed task 2]</p>
+          <p class="mb-1"><span class="text-wolf font-bold"> IN PROGRESS:</span></p>
+          <p class="mb-3 ml-4">[Current task] — on track for [date]</p>
+          <p class="mb-1"><span class="text-primary font-bold"> NEXT:</span></p>
+          <p class="mb-3 ml-4">[What's coming next week]</p>
+          <p class="mb-1"><span class="text-error font-bold"> BLOCKERS:</span> <span class="text-muted">[None / waiting on your feedback on X]</span></p>
+          <p class="mb-2 mt-3">Everything is on track for [delivery date]. Let me know if you have any questions!</p>
+          <p class="mb-0">Best,<br/>H. Sadew</p>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-[#ff8800] text-sm">rule</span> Update Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-[#ff8800]/5 border border-[#ff8800]/10"><p class="text-xs font-bold text-[#ff8800] mb-1">SEND WEEKLY</p><p class="text-xs text-muted">Every week at the same day/time. Builds trust through consistency.</p></div>
+          <div class="p-4 rounded-xl bg-[#ff8800]/5 border border-[#ff8800]/10"><p class="text-xs font-bold text-[#ff8800] mb-1">LEAD WITH PROGRESS</p><p class="text-xs text-muted">Always start with what's done. Clients want to see momentum.</p></div>
+          <div class="p-4 rounded-xl bg-[#ff8800]/5 border border-[#ff8800]/10"><p class="text-xs font-bold text-[#ff8800] mb-1">BE HONEST ABOUT BLOCKERS</p><p class="text-xs text-muted">"Waiting on your feedback" is a valid blocker. Don't hide delays.</p></div>
+          <div class="p-4 rounded-xl bg-[#ff8800]/5 border border-[#ff8800]/10"><p class="text-xs font-bold text-[#ff8800] mb-1">KEEP IT SHORT</p><p class="text-xs text-muted">4-6 lines max. If it needs more, schedule a call.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: Polite Rejections -->
+    <div class="comms-tab hidden reveal" id="comms-reject">
+      <div class="glass rounded-3xl p-6 md:p-8 mb-6">
+        <h3 class="text-xl font-bold mb-2 flex items-center gap-2"><span class="material-symbols-outlined text-purple-400">do_not_disturb_on</span> Polite Rejection Templates</h3>
+        <p class="text-muted text-sm mb-4">Always leave the door open. Never explain too much. Recommend someone else if possible.</p>
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl bg-purple-500/5 border border-purple-400/10">
+            <p class="text-[10px] font-bold tracking-widest text-purple-400 mb-2">REJECTION: Not a Good Fit</p>
+            <p class="text-xs text-muted italic">"Hi [Name], thanks for considering me for [project]. After reviewing the scope, I don't think I'm the best fit for this particular project. I'd recommend reaching out to [alternative resource/type of freelancer] who specializes in that area. I'd love to work together on something more aligned with [your specialty] in the future. Best of luck! H. Sadew"</p>
+          </div>
+          <div class="p-4 rounded-xl bg-purple-500/5 border border-purple-400/10">
+            <p class="text-[10px] font-bold tracking-widest text-purple-400 mb-2">REJECTION: Too Busy</p>
+            <p class="text-xs text-muted italic">"Hi [Name], appreciate you thinking of me for this! I'm currently at capacity with a full project pipeline and can't give [project] the attention it deserves. If your timeline is flexible, I could look at this in [month]. Otherwise, I'd suggest [alternative]. Best, H. Sadew"</p>
+          </div>
+          <div class="p-4 rounded-xl bg-purple-500/5 border border-purple-400/10">
+            <p class="text-[10px] font-bold tracking-widest text-purple-400 mb-2">REJECTION: Budget Too Low</p>
+            <p class="text-xs text-muted italic">"Hi [Name], thanks for sharing the details. The scope you've described would typically start at $[Amount] for the quality level needed. I don't want to take on a project where I can't deliver my best work at that budget. If your budget changes in the future, I'd love to chat. Best of luck finding the right fit! H. Sadew"</p>
+          </div>
+        </div>
+      </div>
+      <div class="glass rounded-3xl p-6 md:p-8">
+        <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-purple-400 text-sm">lightbulb</span> Rejection Rules</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="p-4 rounded-xl bg-purple-500/5 border border-purple-400/10"><p class="text-xs font-bold text-purple-400 mb-1">NEVER EXPLAIN TOO MUCH</p><p class="text-xs text-muted">"Not the best fit" is enough. Over-explaining invites negotiation.</p></div>
+          <div class="p-4 rounded-xl bg-purple-500/5 border border-purple-400/10"><p class="text-xs font-bold text-purple-400 mb-1">RECOMMEND SOMEONE ELSE</p><p class="text-xs text-muted">Shows goodwill. They'll remember you positively and may refer others.</p></div>
+          <div class="p-4 rounded-xl bg-purple-500/5 border border-purple-400/10"><p class="text-xs font-bold text-purple-400 mb-1">LEAVE DOOR OPEN</p><p class="text-xs text-muted">"I'd love to work together in the future" — they might come back with budget.</p></div>
+          <div class="p-4 rounded-xl bg-purple-500/5 border border-purple-400/10"><p class="text-xs font-bold text-purple-400 mb-1">DON'T APOLOGIZE</p><p class="text-xs text-muted">You're running a business. "I don't have capacity" is professional, not rude.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================ -->
+  <!-- SECTION 10: CONTACT -->
   <!-- ============================================ -->
   <section class="px-8 py-12" id="contact">
     <div class="mb-8 reveal">
@@ -1188,6 +1456,18 @@
     const overlay = document.getElementById('sidebarOverlay');
     sidebar.classList.toggle('open');
     overlay.classList.toggle('hidden');
+  }
+
+  // Client Comms tab switching
+  function showCommsTab(tab, btn) {
+    document.querySelectorAll('.comms-tab').forEach(function(el) { el.classList.add('hidden'); });
+    document.getElementById('comms-' + tab).classList.remove('hidden');
+    document.querySelectorAll('#comms button').forEach(function(b) {
+      b.classList.remove('bg-wolf/20', 'text-wolf', 'border-wolf/30');
+      b.classList.add('bg-white/5', 'text-muted', 'border-white/10');
+    });
+    btn.classList.remove('bg-white/5', 'text-muted', 'border-white/10');
+    btn.classList.add('bg-wolf/20', 'text-wolf', 'border-wolf/30');
   }
 
   // Close sidebar on mobile nav click
